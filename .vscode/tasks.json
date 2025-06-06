@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Java: Compile and Run Current File with IO Redirection",
+            "type": "shell",
+            "command": "javac \"${file}\" && java -cp \"${fileDirname}\" \"${fileBasenameNoExtension}\" < ${fileDirname}/input.txt > ${fileDirname}/output.txt",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            }
+        }
+    ]
+}
