@@ -1,0 +1,6 @@
+
+- when sending array indexes as parameters, better to send actual inclusive indexes. This will help in avoiding out of index errors.
+
+- always calculate mid point using subtraction, other wise additiona can cause out of range for integer.
+`int mid = st + (end-st)/2;`
+
