@@ -4,3 +4,12 @@
 - always calculate mid point using subtraction, other wise additiona can cause out of range for integer.
 `int mid = st + (end-st)/2;`
 
+- reverse array algorithm.
+// remember that while reversing you have to iterate to only half
+for (int i=0; i<totalElements/2; i++) {
+    swap(nums, i, nums.length-1-i);
+}
+
+- (Very Important) Difference between two elements in cummulative sum array = Sum of elements between those positions in the original array.
+
+
