@@ -25,3 +25,19 @@ System.out.println(isPerfectDivision(10.0, 5.0)); // true
 System.out.println(isPerfectDivision(1.0, 0.1));   // true (handles precision error)
 System.out.println(isPerfectDivision(10.0, 3.0)); // false
 
+// For dynamic string and characters concatinations. use string builder.
+
+StringBuilder sb = new StringBuilder();
+sb.append(ch);
+sb.toString();
+
+// java substring method - remember that endIndex is excluded.
+substring(int beginIndex, int endIndex)
+
+// Java method reference
+The :: syntax is a method reference operator introduced in Java 8. It provides a concise way to refer to a method without executing it immediately or providing its implementation details (which is the purpose of a lambda expression).
+The :: operator allows you to treat a method name as a value that can be passed around to methods that expect a functional interface (like the function expected by Comparator.comparingInt()).
+
+Comparator<Movie> yearDescendingComparator = Comparator.comparingInt(Movie::getYear).reversed();
+
+Remember, Strings are Immutable!

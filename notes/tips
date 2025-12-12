@@ -24,5 +24,5 @@ Video link: https://www.youtube.com/watch?v=6zhGS79oQ4k
 
 - Also integer multiplication or addition can go out of range. So remember to keep things in long while calculating.
 
-
+- Remember the approaches for rotating an array by fixed positions and rotating string by fixed positions. This is helpful in lots of questions.
 
