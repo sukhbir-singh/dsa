@@ -41,3 +41,6 @@ The :: operator allows you to treat a method name as a value that can be passed 
 Comparator<Movie> yearDescendingComparator = Comparator.comparingInt(Movie::getYear).reversed();
 
 Remember, Strings are Immutable!
+
+Character.isDigit(ch) -> To check if character is digit or not.
+

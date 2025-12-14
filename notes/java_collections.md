@@ -39,6 +39,9 @@ map.forEach((key, value) -> {
     System.out.println("Key: " + key + ", Value: " + value);
 });
 
+Note: in this first approach - remember that you cannot use local variable of method. 
+You will get error like this => Line 14: error: local variables referenced from a lambda expression must be final or effectively final;
+
 >> Approach 2
 
 // Source - https://stackoverflow.com/a
@@ -83,4 +86,4 @@ for (char c : s.toCharArray()) {
 List<Character> characters = new ArrayList<>(counts.keySet());        
 Collections.sort(characters, (a, b) -> counts.get(b) - counts.get(a));
 
-
+- Remeber that valueSet() method does not exist in java for hash map. only keyset and entryset exists.

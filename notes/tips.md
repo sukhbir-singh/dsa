@@ -26,3 +26,10 @@ Video link: https://www.youtube.com/watch?v=6zhGS79oQ4k
 
 - Remember the approaches for rotating an array by fixed positions and rotating string by fixed positions. This is helpful in lots of questions.
 
+- Remember that integer range is from [-2^31, 2^31 - 1]
+
+- Note: Integer.MAX_VALUE + 1 will be a negative value. For correct calculation, you should convert it to long and then use. like this:
+(long)Integer.MAX_VALUE + 1
+
+- for checking palindrom in string => expand from centers
+
