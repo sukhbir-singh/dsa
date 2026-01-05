@@ -79,3 +79,10 @@ private ListNode findMiddle(ListNode head) {
     return s;
 }
 
+-  Merge Sort is one of the efficient sorting algorithms that is popularly used for sorting the linked list.
+
+- Reminder: Always think of all the cases before jumping to implementation.
+
+- In Recursion questions, in order to generate all combinations remember to iterate over all elements of input array and then think of logic in the recursion for each element. index will be one of the parameter of recursion.
+
+

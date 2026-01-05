@@ -44,3 +44,10 @@ Remember, Strings are Immutable!
 
 Character.isDigit(ch) -> To check if character is digit or not.
 
+- (Very Important) In Java, -5%2 == -1 and not 1. Please remember this.
+
+- In m^n power question, remember to handle case when power is zero.
+
+Maths
+- In a string of digits, there are n/2 odd places and (n+1)/2 even places. both with floor value.
+
