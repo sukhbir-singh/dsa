@@ -85,4 +85,17 @@ private ListNode findMiddle(ListNode head) {
 
 - In Recursion questions, in order to generate all combinations remember to iterate over all elements of input array and then think of logic in the recursion for each element. index will be one of the parameter of recursion.
 
+- In recursion question, whenever possible try to avoid creating lots of deep cloning as it makes the program slow. Instead you can try adding to list and removing to list after the recursion call.
+Useful Method: list.removeLast();
+
+- Hint: whenever there is a problem for printing combinations, or subsequences -> the first thing that strikes the mind should be recusion.
+Sometimes useful: pick and not-pick method.
+
+- When you have to find unique combination of list of numbers. Maybe you can add list to set so that it keeps only unique sequence. And later convert this set to list.
+
+- (Important) In combination questions on array, for optimization - one very good trick that I learnt is that check if current array element is equals to previous index element. If yes, then do not proceed as it will result in same combination. Otherwise proceed.
+So the idea is that if we want unique combinations as result. We should avoid processing same combinations again and again. And loop over entire array for picking each element is better that take or not-take approach.
+// Skip duplicate numbers by checking if candidates[i] == candidates[i - 1] for i > index.
+
+- Hint: Whenever in question, you are asked to find unique combinations remember that one good trick is to use Set at the start in main method. And to put combinations in that set and later convert them to list. One more thing: It's important to sort the array initially at the beginning, otherwise same combinations with different sequences will come up. like [1,1,4] , [1,4,1] => Inside set these two are different lists. right but actually logically these are same. That's why sorting the input list is very important.
 

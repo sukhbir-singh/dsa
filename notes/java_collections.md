@@ -87,3 +87,9 @@ List<Character> characters = new ArrayList<>(counts.keySet());
 Collections.sort(characters, (a, b) -> counts.get(b) - counts.get(a));
 
 - Remeber that valueSet() method does not exist in java for hash map. only keyset and entryset exists.
+
+- ArrayList has one useful method to remove the last element. This is quite useful in recursion questions.
+Useful Method: list.removeLast(); // Introduced in Java 21, so it won't work in older java versions
+Instead of this method use: list.remove(list.size()-1);
+
+
