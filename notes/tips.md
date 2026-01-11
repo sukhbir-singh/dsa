@@ -109,4 +109,6 @@ st.push(new int[]{ nums2[i], i });
 
 - Next greater elements, next smaller elements -> these are very important tools for other questions. These algorithms you should know by heart like DFS, etc.
 
+- In many questions, when you think how to solve the problem using brute force - you will also get the hint how to solve it optimally in best possible way.
+
 
