@@ -99,3 +99,14 @@ So the idea is that if we want unique combinations as result. We should avoid pr
 
 - Hint: Whenever in question, you are asked to find unique combinations remember that one good trick is to use Set at the start in main method. And to put combinations in that set and later convert them to list. One more thing: It's important to sort the array initially at the beginning, otherwise same combinations with different sequences will come up. like [1,1,4] , [1,4,1] => Inside set these two are different lists. right but actually logically these are same. That's why sorting the input list is very important.
 
+- This is also very useful in question when we need to keep pair type of things in datastructure like stack.
+Stack<int[]> st = new Stack<>();
+st.push(new int[]{ nums2[i], i });
+
+- Nice Trick: I just learnt that if you want to keep track of array position along with integer present there in stack, then no need to store pair of integers representing both of them. Instead just keep the array indices and that will represent both array element and the index at which the number is present.
+
+- (Important) While implementing solutions ensure that you handled all the edges cases - positive, negative, greater, smaller, etc.
+
+- Next greater elements, next smaller elements -> these are very important tools for other questions. These algorithms you should know by heart like DFS, etc.
+
+

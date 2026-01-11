@@ -48,6 +48,16 @@ Character.isDigit(ch) -> To check if character is digit or not.
 
 - In m^n power question, remember to handle case when power is zero.
 
-Maths
-- In a string of digits, there are n/2 odd places and (n+1)/2 even places. both with floor value.
+- Maths: In a string of digits, there are n/2 odd places and (n+1)/2 even places. both with floor value.
+
+- In java, one good way to write big integers those are powers of 10 is by using e. But remember that it will always return double.
+Shortcut for remembering e = 1o^
+
+So in this Example:-
+
+1e9 has value: 1 x 10^9 (one billion, or 1,000,000,000). Data Type: By default, it is a double.
+10e9 has value: 10 x 10^9 (ten billion, or 10,000,000,000).
+
+So if question asked -  answer modulo 10^9 + 7 => You should do ans % (1e9 + 7)
+
 
