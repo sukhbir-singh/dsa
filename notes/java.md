@@ -60,4 +60,7 @@ So in this Example:-
 
 So if question asked -  answer modulo 10^9 + 7 => You should do ans % (1e9 + 7)
 
+- Very nice way to initialize an array
+int[] lastPos = { -1, -1, -1 };
+
 

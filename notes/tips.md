@@ -111,4 +111,11 @@ st.push(new int[]{ nums2[i], i });
 
 - In many questions, when you think how to solve the problem using brute force - you will also get the hint how to solve it optimally in best possible way.
 
+- Try to make code as clean as possible. Most of the times when code does not looks clean, it introduces lots of unavoidable bugs.
+
+- Remember: In an array, if you have two pointers l and r and are places at two positions in the array, then the total elements present in the subarray starting from l to r is (r-l+1).
+
+- Note: If you have all alphabet characters, then taking array for storing frequency is also a good option.
+int[] freq = new int[26];
+
 

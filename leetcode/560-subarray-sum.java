@@ -1,7 +1,8 @@
 import java.util.*;
 class Solution {
-    // [1, 2, 3, 4,  5,  6,  7]
-    // [1, 3, 6, 10, 15, 21, 28]
+    // one of the most important question
+    // array: [1, 2, 3, 4,  5,  6,  7]
+    // c.s :  [1, 3, 6, 10, 15, 21, 28]
     public int subarraySum(int[] nums, int k) {
         int ans = 0;
 
