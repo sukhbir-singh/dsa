@@ -118,4 +118,19 @@ st.push(new int[]{ nums2[i], i });
 - Note: If you have all alphabet characters, then taking array for storing frequency is also a good option.
 int[] freq = new int[26];
 
+- Good to know: QuickSelect - pick pivot element, sort elements as left, mid and right. 
+Time complexity: O(n) on average, O(n^2) in the worst case.
+
+- Counting sort is a non-comparison sorting algorithm. It can be used to sort an array of positive integers.
+
+- Its also a good practicse to iterate overall couple of examples to understand the way of solution and how it is working. This also gives direction to some patterns that can help in solving the problem.
+
+- Useful: very nice pattern for priority queue: reprocess elements using a temporary list.
+
+- One good technique, I learnt is that you just pick one element from the list like the first element of the array and then keep decreasing the number and find it in the map till the point it exists. In this way, you know the start of the sequence. This approach is helpful in many questions to find start of the sequences. And also help in coming up with most optimal solution.
+
+- Trick: In questions when you have to create a new linked list and return - Always remember to create a one node list first and then keep adding elements to it. In the end, return head.next
+
+- Time complexity of heap is O(log k), where k is size of the heap. If we keep constant size of heap then time complexity remains consistent.
+
 

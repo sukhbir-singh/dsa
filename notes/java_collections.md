@@ -93,3 +93,8 @@ Useful Method: list.removeLast(); // Introduced in Java 21, so it won't work in 
 Instead of this method use: list.remove(list.size()-1);
 
 
+--------------------------------------------------------------------------------
+
+- This is important for priority queue implementation in questions.
+PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+

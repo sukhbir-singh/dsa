@@ -63,4 +63,15 @@ So if question asked -  answer modulo 10^9 + 7 => You should do ans % (1e9 + 7)
 - Very nice way to initialize an array
 int[] lastPos = { -1, -1, -1 };
 
+- In Java, a TreeMap is a specialized collection used to store key-value pairs in a sorted order based on their keys. It is part of the java.util package and implements the NavigableMap and SortedMap interfaces.
+- Maintaining Sorted Data: Keys are automatically sorted in their natural order (e.g., alphabetically for Strings or numerically for Integers) or according to a custom comparator provided at creation.
+- Internal Structure: It uses a Red-Black Tree (a self-balancing binary search tree) to store data.
+- Time Complexity: Basic operations like put(), get(), and remove() have a guaranteed O(log n) time complexity.
+
+Example: Map<Integer, String> studentMap = new TreeMap<>();
+
+- Priority queue with customer comparator:
+// Create a priority queue (min-heap) to store nodes
+PriorityQueue<ListNode> pq = new PriorityQueue<>((a, b) -> a.val - b.val);
+
 
