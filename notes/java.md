@@ -74,4 +74,17 @@ Example: Map<Integer, String> studentMap = new TreeMap<>();
 // Create a priority queue (min-heap) to store nodes
 PriorityQueue<ListNode> pq = new PriorityQueue<>((a, b) -> a.val - b.val);
 
+- Useful method for filling an array with constant number:
+Arrays.fill(row, -1);
+
+- enum is also very useful in many implementations. use it like this: Index.GOOD
+enum Index {
+    GOOD,
+    BAD,
+    UNKNOWN,
+}
+
+- Good code using helper method:
+int[] jumps = new int[len];
+Arrays.fill(jumps, Integer.MAX_VALUE);
 

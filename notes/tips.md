@@ -133,4 +133,8 @@ Time complexity: O(n) on average, O(n^2) in the worst case.
 
 - Time complexity of heap is O(log k), where k is size of the heap. If we keep constant size of heap then time complexity remains consistent.
 
+- In simple bracket question, you can just use an integer counter instead of taking whole stack based approach.
+
+- Sometimes recursively iterating all solutions is also a brute force implementation.
+Time complexity for recursion is (num_of_branches)^N
 
