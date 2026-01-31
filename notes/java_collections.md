@@ -98,3 +98,25 @@ Instead of this method use: list.remove(list.size()-1);
 - This is important for priority queue implementation in questions.
 PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
 
+- Remember this: The LinkedList class provided in the Java Collections Framework (specifically java.util.LinkedList) is a doubly linked list implementation. 
+
+- How to sort two dimentional array?
+> int[][] intervals;
+> Arrays.sort(intervals, (arr1, arr2) -> arr1[0] - arr2[0]);
+
+Another way: Arrays.sort(intervals, Comparator.comparingInt(a -> a[1]));
+
+Important:
+- In Java, you can define List<int[]> res = new ArrayList<>(); because arrays are objects, which makes them reference types. 
+- While Java Generics do not allow primitive types (like int) as type parameters, they fully support reference types, including array types.
+
+- You can directly convert list to array using helper method.
+List<int[]> res = new ArrayList<>();
+res.add(new int[]{1,4});
+int[][] final = res.toArray(new int[res.size()][]);
+
+List<Integer> list = new ArrayList<>(List.of(10, 20, 30));
+Integer[] objArray = list.toArray(new Integer(list.size()));
+
+Note: In list.toArray method you have to pass the new array as argument because by default this method return Object array if you don't pass the argument. If argument is passed that type array is returned.
+

@@ -138,3 +138,7 @@ Time complexity: O(n) on average, O(n^2) in the worst case.
 - Sometimes recursively iterating all solutions is also a brute force implementation.
 Time complexity for recursion is (num_of_branches)^N
 
+- "As time goes by" simulation is useful in many scheduling questions. Video: https://www.youtube.com/watch?v=AsGzwR_FWok
+
+- I feel most of the greedy algorithms are intuision based. Think through the examples and you will find a way to solve them.
+
