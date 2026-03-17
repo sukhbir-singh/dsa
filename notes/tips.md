@@ -142,3 +142,29 @@ Time complexity for recursion is (num_of_branches)^N
 
 - I feel most of the greedy algorithms are intuision based. Think through the examples and you will find a way to solve them.
 
+# Tree
+- In Tree questions, what i found is that in most cases, the brute force is to traverse across entire tree and for each node - try to find the height of left child and height of right child. For finding height at that point, you have to traverse whole subtree. so that is what is taking time.
+
+- For calculating diameter of the tree, for each node - you can return -1 from both empty child nodes and then add +2 to it. 
+Note: diameter is maximum length between any 2 nodes in the tree.
+
+- TreeInfo is a good variable name to encaptulate the extra informations that you want to send from each child node to the parent nodes.
+
+- For comparing two trees, simulateous traversals in both trees at the same time is very good way to compare.
+
+- Good method naming: if question is isSymmetrical, you name recursion method isSymmetricalHelper
+
+- In tree, level order traversal is one of the important questions. Frequently used in other questions.
+
+- One common mistake that i observed doing in lots of tree question implementation is getting confused between pushing TreeNode or integer to map. Sometime you have to keep track or integer values and other time you have to keep track or Nodes.
+
+- I found one more interesting way to implement tree - level order traversal today. where you can use just one queue. Keep adding nodes to this list along with a null entry. Whenever we see a null, it means one row is finished execution. In the loop, add condition for this null. 
+Another way is to use nested loop like for loop instead while loop. because we know that at any point, all nodes present in the queue belongs to particular level. All nodes are there. [This is a very good observation - remember this]
+
+- One good tip: If you are dividing problem into small methods, and if you need to calculate some final list that aggregate result of all these methods. Then good practise is to define an empty list in main method and then pass that list as argument in all the smaller methods. So that they will add data in this list. This is much better that creating new list in each method and then combining.
+
+- Remember: Recursive traveral in tree is much easier to implement as compared to iterative traversal.
+
+- Thinking perspective: you should start seeing nodes in tree in columns for top-bottom view type questions.
+Note: vertical line based thinking and traversal for tree is useful in other questions as well.
+

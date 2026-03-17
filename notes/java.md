@@ -88,3 +88,6 @@ enum Index {
 int[] jumps = new int[len];
 Arrays.fill(jumps, Integer.MAX_VALUE);
 
+- Jshell is the program used for executing line by line java on terminal.
+
+- Do not use Pair in java, as it requires additional library and is not present bydefault.

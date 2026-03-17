@@ -120,3 +120,7 @@ Integer[] objArray = list.toArray(new Integer(list.size()));
 
 Note: In list.toArray method you have to pass the new array as argument because by default this method return Object array if you don't pass the argument. If argument is passed that type array is returned.
 
+- SimpleEntry
+java.util.AbstractMap.SimpleEntry<K,V> is a mutable implementation of the Map.Entry interface in Java, used to store a single key-value pair. It provides methods like getKey(), getValue(), and setValue(V value) to access and modify pair data, facilitating custom map implementations or returning map entries.
+- AbstractMap.SimpleEntry<K, V> is used to maintain a key and a value entry. The value can be changed using the setValue method.
+
