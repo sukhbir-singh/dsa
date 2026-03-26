@@ -168,3 +168,5 @@ Another way is to use nested loop like for loop instead while loop. because we k
 - Thinking perspective: you should start seeing nodes in tree in columns for top-bottom view type questions.
 Note: vertical line based thinking and traversal for tree is useful in other questions as well.
 
+- For BST, both recursive and iterative approach is good and simple to implement. Because in each iteration you have to go to either one of the side of the node.
+
