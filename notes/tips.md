@@ -170,3 +170,14 @@ Note: vertical line based thinking and traversal for tree is useful in other que
 
 - For BST, both recursive and iterative approach is good and simple to implement. Because in each iteration you have to go to either one of the side of the node.
 
+- Note: When reversing the condition for falisy, make sure all symbols are reversed including >, <, then will become <= and >=
+
+- BST Inorder property is very useful. That is, inorder traversal of BST gives us sorted list.
+
+- In BST questions, most of the times - you will be using the binary property of tree nodes to solve the problem. 
+
+- In BST, in most cases you assume that all values are unique. (Clarify this assumption in interviews.)
+
+- Remember: Two sum problem on sorted array - can be solved easily using two pointer.
+
+
