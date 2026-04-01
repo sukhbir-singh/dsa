@@ -131,3 +131,12 @@ java.util.AbstractMap.SimpleEntry<K,V> is a mutable implementation of the Map.En
 Deque<NestedInteger> stack = new ArrayDeque<>();
 See: https://leetcode.com/problems/flatten-nested-list-iterator/solutions/80147/Simple-Java-solution-using-a-stack-with-explanation/comments/165585/
 
+
+- Yes, I'm sure! While Deque stands for "double-ended queue," the interface was specifically designed to replace the legacy Stack class, so it includes push(e), pop(), and peek() as part of its official API.
+In the Deque interface:
+push(e) is an alias for addFirst(e).
+pop() is an alias for removeFirst().
+peek() is an alias for peekFirst().
+
+https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html
+

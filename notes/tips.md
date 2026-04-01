@@ -180,4 +180,6 @@ Note: vertical line based thinking and traversal for tree is useful in other que
 
 - Remember: Two sum problem on sorted array - can be solved easily using two pointer.
 
+- Finding the swapped pair in the almost sorted array in O(n) time is an important trick! (Reference: https://leetcode.com/problems/recover-binary-search-tree/description/)
+
 
