@@ -128,7 +128,7 @@ java.util.AbstractMap.SimpleEntry<K,V> is a mutable implementation of the Map.En
 --------------------------------------------------------------------------------
 
 - (Research this point) I read somewhere that Stack is deprecated in Java after Java 11. So instead you should use newer collection libraries like 
-Deque<NestedInteger> stack = new ArrayDeque<>();
+Deque<Integer> stack = new ArrayDeque<>();
 See: https://leetcode.com/problems/flatten-nested-list-iterator/solutions/80147/Simple-Java-solution-using-a-stack-with-explanation/comments/165585/
 
 
@@ -139,4 +139,30 @@ pop() is an alias for removeFirst().
 peek() is an alias for peekFirst().
 
 https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html
+
+--------------------------------------------------------------------------------
+
+#### Important Learning For Set with Custom Class
+
+- We need to implement two methods: equals and hashCode, then only two objects places in the set will be recognized as same. See Example below.
+
+@Override
+public boolean equals(Object o) {
+    if (this == o) return true;
+    if (!(o instanceof Point)) return false;
+    Point point = (Point) o;
+    return r == point.r && c == point.c;
+}
+
+@Override
+public int hashCode() {
+    return java.util.Objects.hash(r, c);
+}
+
+Note: For hashcode method implementation, this is a good method: java.util.Objects.hash(...obj); You can pass any number of arguments in this method. It behavours like you have added all those values in an array and called - Arrays.hashCode(arr)
+
+--------------------------------------------------------------------------------
+
+- Remember that java donot hava Pair class inbuilt. Pair class is present in JavaFX library which is GUI library and is not present by default.
+
 

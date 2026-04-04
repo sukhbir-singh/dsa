@@ -182,4 +182,18 @@ Note: vertical line based thinking and traversal for tree is useful in other que
 
 - Finding the swapped pair in the almost sorted array in O(n) time is an important trick! (Reference: https://leetcode.com/problems/recover-binary-search-tree/description/)
 
+- Remember: In BFS, visit node and then add it to the queue. But In DFS, visit node in the first line of recursion method.
+
+- Important: If you have to create adjancency list for a graph from scratch. Remember that after creating list of list of integer, you have to loop and push empty list to the adj list.
+
+- Thought: If you just have to visit all nodes in a connected graph, prefer DFS simply because it is easy and stack is implicit. In BFS you have to code little more and also have to maintain queue datastruction related operations.
+
+- For Travering in matrix questions, I think using directions array is a very good approach.
+
+int[][] directions = { {-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+for (int[] d : directions) {
+    int neighborRow = row + d[0];
+    int neighborCol = col + d[1];
+...
+}
 
