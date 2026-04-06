@@ -165,4 +165,20 @@ Note: For hashcode method implementation, this is a good method: java.util.Objec
 
 - Remember that java donot hava Pair class inbuilt. Pair class is present in JavaFX library which is GUI library and is not present by default.
 
+--------------------------------------------------------------------------------
 
+# How to convert List to Array
+
+int[] result = new int[sequence.size()];
+for (int i = 0; i < sequence.size(); i++) {
+    result[i] = sequence.get(i);
+}
+return result;
+
+return sequence.stream().mapToInt(Integer::intValue).toArray();
+
+--------------------------------------------------------------------------------
+
+Prefer using util class for arrays:
+int[] color = new int[n];
+Arrays.fill(color, -1);

@@ -197,3 +197,5 @@ for (int[] d : directions) {
 ...
 }
 
+- The first thing you should think about when it comes to shortest path problems on graphs is BFS.
+

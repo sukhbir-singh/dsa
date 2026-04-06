@@ -91,3 +91,34 @@ Arrays.fill(jumps, Integer.MAX_VALUE);
 - Jshell is the program used for executing line by line java on terminal.
 
 - Do not use Pair in java, as it requires additional library and is not present bydefault.
+
+> How to check java version in code?
+String version = System.getProperty("java.version");
+System.out.println("Java Version: " + version);
+
+
+## Important
+Use records instead of POJO class in java. Remember it is immutable.
+Java Records, introduced in Java 16, are built directly into the language. They are designed for "data carrier" classes where the data is not intended to change after the object is created.
+
+Otherwise in production systems, prefer Lombok library, which provides lots of useful annotations like @Data, @NoArgConstruction, etc.
+
+Example: 
+// That's it! One line defines everything.
+public record User(String name, int age) {}
+
+// --- How to use it ---
+public class RecordDemo {
+    public static void main(String[] args) {
+        User user = new User("Alice", 30);
+
+        // Accessors do NOT use 'get' prefix
+        System.out.println(user.name()); // Output: Alice
+        System.out.println(user.age());  // Output: 30
+
+        // Records automatically provide useful toString(), equals(), and hashCode()
+        System.out.println(user); // Output: User[name=Alice, age=30]
+    }
+}
+
+
