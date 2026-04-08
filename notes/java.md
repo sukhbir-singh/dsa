@@ -121,4 +121,6 @@ public class RecordDemo {
     }
 }
 
+// Useful built-in method for converting given Integer to String
+Integer.toBinaryString(num)
 

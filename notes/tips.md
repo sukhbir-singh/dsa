@@ -199,3 +199,14 @@ for (int[] d : directions) {
 
 - The first thing you should think about when it comes to shortest path problems on graphs is BFS.
 
+- Bitwise tough question should give you hint that it might need Trie data structure.
+
+- Very usefult XOR property for bitwise,
+Check if p1^p2 == currXor, i.e. p1 == currXor^p2.
+
+- Trick:
+When using record in java, if you want to sort by any particular value, use collections.sort like this:
+
+record Element(int x, int m, int i){};
+Collections.sort(list, (e1, e2) -> e1.m() - e2.m());
+

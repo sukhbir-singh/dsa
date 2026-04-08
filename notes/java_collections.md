@@ -182,3 +182,31 @@ return sequence.stream().mapToInt(Integer::intValue).toArray();
 Prefer using util class for arrays:
 int[] color = new int[n];
 Arrays.fill(color, -1);
+
+--------------------------------------------------------------------------------
+
+# Remember that Map.get returns null if key is not present and does not throw exception
+
+jshell> Map<Integer, Integer> mp = new HashMap<>();
+mp ==> {}
+
+jshell> mp
+mp ==> {}
+
+jshell> mp.put(1,33)
+$40 ==> null
+
+jshell> mp.get(1)
+$41 ==> 33
+
+jshell> mp.get(34)
+$42 ==> null
+
+--------------------------------------------------------------------------------
+
+- For deleting all keys from set use .clear method.
+
+Set<Integer> prefixes = new HashSet<>();
+prefixes.clear();
+
+
