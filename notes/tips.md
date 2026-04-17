@@ -211,3 +211,8 @@ record Element(int x, int m, int i){};
 Collections.sort(list, (e1, e2) -> e1.m() - e2.m());
 
 - Interview Tip: Practice Overriding Your Brains "Assume" Mode!
+
+- DP Tip:
+// In DP, always always try to create 2D DP array for memoization. Other map based dp is inefficient.
+The logic might be correct, but the HashMap with Pair record keys is too slow. Each recursive call creates a new Pair object, and HashMap lookups involve hashing, autoboxing, and GC pressure. With nums.length up to 200 and sum/2 up to 20,000, that's up to 4 million states — manageable with an array, but costly with a HashMap.
+
