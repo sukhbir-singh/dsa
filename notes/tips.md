@@ -210,3 +210,4 @@ When using record in java, if you want to sort by any particular value, use coll
 record Element(int x, int m, int i){};
 Collections.sort(list, (e1, e2) -> e1.m() - e2.m());
 
+- Interview Tip: Practice Overriding Your Brains "Assume" Mode!
