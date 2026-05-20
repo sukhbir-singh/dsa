@@ -1,3 +1,5 @@
+import java.util.*;
+
 // In DP, always always try to create 2D DP array for memoization. Other map based dp is inefficient.
 class Solution {
     // we can only divide array to two equal sum parts when total sum is even

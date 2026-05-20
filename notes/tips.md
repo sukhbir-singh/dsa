@@ -216,3 +216,36 @@ Collections.sort(list, (e1, e2) -> e1.m() - e2.m());
 // In DP, always always try to create 2D DP array for memoization. Other map based dp is inefficient.
 The logic might be correct, but the HashMap with Pair record keys is too slow. Each recursive call creates a new Pair object, and HashMap lookups involve hashing, autoboxing, and GC pressure. With nums.length up to 200 and sum/2 up to 20,000, that's up to 4 million states — manageable with an array, but costly with a HashMap.
 
+- Subset Question:
+In subset question, if you have to get two subsets such that all array elements are divided into these two subsets then its easy to just find all possible one subset and remaining elements are obviously parts of second subset. So you can do things asked in question without explicitely finding second subset.
+
+
+# DP
+// Very important: In DP question - take variables in parameter and result should be returned by the recursive method. dont start passing result in parameter, it will start giving cached wrong result.
+
+In memoized DP: the parameters should define the state (the cache key), and the function should return the answer for that state. Never pass an accumulator (like count) as a parameter — it makes the return value path-dependent, but the cache key doesn't include it, so you get stale/wrong cached results.
+
+The rule: If dp[index][amt] is your cache, then the return value must depend only on index and amt — nothing else. The moment you pass count and bake it into the return value, the cache breaks because different callers reach the same (index, amt) with different count values.
+
+This applies to every top-down memoized DP problem. The pattern is always:
+
+int solve(int ...stateVars) {
+    if (memo[stateVars] != UNVISITED) return memo[stateVars];
+    // compute answer using ONLY stateVars
+    memo[stateVars] = answer;
+    return answer;
+}
+
+No accumulators, no extra context from the caller — just state in, answer out.
+
+- Note: Why greedy algorithm don't work in most of the cases is because of uniformity. Greedy tries to final global maxima, by apply local maxima. Which is not always correct because the dataset is not uniform. That is where we have to try out all possibilities using recusion + DP.
+
+- Remember: In questions when infinite supply is there, and when you do take/notTake then for take do not move index - 1, stay there. like keep passing index in new recursion call.
+
+# More DP Learning:
+- In dp if your parameters are index and target sum and if sum is becoming negative in algorithm, then you should consider using larger array size for target index like Integer[][] dp = new Integer[nums.length][2*sum+1];
+- Also if ans is becoming zero sometimes then use Integer instead of int because you cannot assign -1 to it initially.
+
+
+
+
