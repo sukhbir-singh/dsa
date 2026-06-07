@@ -211,4 +211,9 @@ prefixes.clear();
 
 - Remember: I keep on doing this mistake. In map, for checking if a particular key is present or not, the method name is "containsKey()" and not "contains".
 
+# Easiest way to reverse an string
+
+String original = "Hello";
+String reversed = new StringBuilder(original).reverse().toString();
+System.out.println(reversed); // Output: olleH
 

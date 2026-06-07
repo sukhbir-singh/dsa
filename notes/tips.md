@@ -246,6 +246,7 @@ No accumulators, no extra context from the caller — just state in, answer out.
 - In dp if your parameters are index and target sum and if sum is becoming negative in algorithm, then you should consider using larger array size for target index like Integer[][] dp = new Integer[nums.length][2*sum+1];
 - Also if ans is becoming zero sometimes then use Integer instead of int because you cannot assign -1 to it initially.
 
+- Obervation: In DP string question, if you think about worst case of maximum answer possible, then you know you can optimize it using longest common subsequence type pattern on that question. Example: if you have to find minimum insertation for making string palindrom, then you know that if you place the reversed string after the input string, it will make the string palindrome. so maximum answer possible is length of string, but by finding the maximum longest palindrome subsequence you can decrease the answer from the maximum possible answer. This is the thought process.
 
-
+- In String DP questions, when processing or going over the DP array at that time - remember to use 1 based index of string, it is very helpful and in bottom up DP as well. This will save lots of edge cases. otherwise in general top down DP approach - taking string indexes synced with DP arrays works.
 

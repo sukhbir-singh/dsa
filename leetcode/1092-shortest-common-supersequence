@@ -1,0 +1,135 @@
+class Solution {
+    public String shortestCommonSupersequence(String str1, String str2) {
+        int l1 = str1.length(), l2 = str2.length();
+
+        int[][] dp = new int[l1][l2];
+        for(int[] arr: dp) {
+            Arrays.fill(arr, -1);
+        }
+
+        computeLcs(str1, str2, l1-1, l2-1, dp);
+        return buildSupersequence(str1, str2, dp);
+    }
+
+    private int computeLcs(String str1, String str2, int ind1, int ind2, int[][] dp) {
+        if (ind1 < 0 || ind2 < 0) {
+            return 0;
+        }
+        if (dp[ind1][ind2] != -1) {
+            return dp[ind1][ind2];
+        }
+
+        int ans = 0;
+        if (str1.charAt(ind1) == str2.charAt(ind2)) {
+            ans = 1 + computeLcs(str1, str2, ind1-1, ind2-1, dp);
+        } else {
+            ans = Math.max(computeLcs(str1, str2, ind1-1, ind2, dp), computeLcs(str1, str2, ind1, ind2-1, dp));
+        }
+
+        dp[ind1][ind2] = ans;
+        return ans;
+    }
+
+    private String buildSupersequence(String str1, String str2, int[][] dp) {
+        StringBuilder sb = new StringBuilder();
+        int r = str1.length() - 1, c = str2.length() - 1;
+
+        while (r >= 0 && c >= 0) {
+            if (str1.charAt(r) == str2.charAt(c)) {
+                sb.append(str1.charAt(r));
+                r--; c--;
+            } else if (lcs(dp, r - 1, c) >= lcs(dp, r, c - 1)) {
+                sb.append(str1.charAt(r));
+                r--;
+            } else {
+                sb.append(str2.charAt(c));
+                c--;
+            }
+        }
+
+        while (r >= 0) sb.append(str1.charAt(r--));
+        while (c >= 0) sb.append(str2.charAt(c--));
+
+        return sb.reverse().toString();
+    }
+
+    // treat out-of-bounds as an empty LCS of length 0
+    private int lcs(int[][] dp, int r, int c) {
+        return (r < 0 || c < 0) ? 0 : dp[r][c];
+    }
+}
+
+// Not so good code because of too many extra branches, just adding here for reference - check buildSupersequence method
+class Solution2 {
+    public String shortestCommonSupersequence(String str1, String str2) {
+        int l1 = str1.length(), l2 = str2.length();
+
+        int[][] dp = new int[l1][l2];
+        for(int[] arr: dp) {
+            Arrays.fill(arr, -1);
+        }
+
+        computeLcs(str1, str2, l1-1, l2-1, dp);
+        return buildSupersequence(str1, str2, dp);
+    }
+
+    private int computeLcs(String str1, String str2, int ind1, int ind2, int[][] dp) {
+        if (ind1 < 0 || ind2 < 0) {
+            return 0;
+        }
+        if (dp[ind1][ind2] != -1) {
+            return dp[ind1][ind2];
+        }
+
+        int ans = 0;
+        if (str1.charAt(ind1) == str2.charAt(ind2)) {
+            ans = 1 + computeLcs(str1, str2, ind1-1, ind2-1, dp);
+        } else {
+            ans = Math.max(computeLcs(str1, str2, ind1-1, ind2, dp), computeLcs(str1, str2, ind1, ind2-1, dp));
+        }
+
+        dp[ind1][ind2] = ans;
+        return ans;
+    }
+
+    private String buildSupersequence(String str1, String str2, int[][] dp) {
+        int l1 = str1.length(), l2 = str2.length();
+
+        StringBuilder sb = new StringBuilder();
+        int r = l1-1, c = l2-1;
+        while (r>=0 && c>=0) {
+            if (str1.charAt(r) == str2.charAt(c)) {
+                sb.append(str1.charAt(r));
+                r--; c--;
+            } else {
+                if (r==0) {
+                    sb.append(str2.charAt(c));
+                    c--;
+                    continue;
+                } else if (c ==0) {
+                    sb.append(str1.charAt(r));
+                    r--;
+                    continue;
+                }
+
+                if (dp[r-1][c] >= dp[r][c-1]) {
+                    sb.append(str1.charAt(r));
+                    r--;
+                } else {
+                    sb.append(str2.charAt(c));
+                    c--;
+                }
+            }
+        }
+
+        // remember: here you have to append rest of the characters in reverse
+        if (r>=0) {
+            sb.append(new StringBuilder(str1.substring(0,r+1)).reverse());
+        }
+        if (c>=0) {
+            sb.append(new StringBuilder(str2.substring(0,c+1)).reverse());
+        }
+
+        return sb.reverse().toString();
+    }
+}
