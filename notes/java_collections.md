@@ -217,3 +217,18 @@ String original = "Hello";
 String reversed = new StringBuilder(original).reverse().toString();
 System.out.println(reversed); // Output: olleH
 
+
+# Remember: Collections.reverse(list) -> do not return any value. it just sorts list in-place.
+
+# Example:
+Sorting string of words by length
+
+Arrays.sort(words, (w1, w2) -> w1.length() - w2.length());
+System.out.println(Arrays.toString(words));
+
+
+// better way to delete character from string
+StringBuilder temp = new StringBuilder(word);
+temp.deleteCharAt(i);
+String predecessor = temp.toString();
+
