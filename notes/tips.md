@@ -250,3 +250,5 @@ No accumulators, no extra context from the caller — just state in, answer out.
 
 - In String DP questions, when processing or going over the DP array at that time - remember to use 1 based index of string, it is very helpful and in bottom up DP as well. This will save lots of edge cases. otherwise in general top down DP approach - taking string indexes synced with DP arrays works.
 
+- In memorization DP, you always have auxiliary space. For avoiding that, you should move to tabulation DP. 
+
