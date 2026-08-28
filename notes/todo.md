@@ -9,3 +9,6 @@
 
 - Topological Sort Using Kahn's Algorithm
 
+- Learn A* algorithm (which helps in optimizing finding algorithms)
+
+

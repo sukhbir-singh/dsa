@@ -1,11 +1,12 @@
 package algorithms.graph;
+import java.util.*;
 
 // Kahn's Algorithm
 // Class that contains the topological sort logic
 class Solution {
 
     // Function to perform BFS-based topological sort
-    public int[] topologicalSort(int V, java.util.ArrayList<java.util.ArrayList<Integer>> adj) {
+    public int[] topologicalSort(int V, ArrayList<ArrayList<Integer>> adj) {
         // Create an array to store the in-degree of each vertex
         int[] indegree = new int[V];
 
@@ -19,7 +20,7 @@ class Solution {
         }
 
         // Create a queue to store vertices with in-degree zero
-        java.util.Queue<Integer> q = new java.util.LinkedList<>();
+        Queue<Integer> q = new LinkedList<>();
 
         // Loop through all vertices
         for (int i = 0; i < V; i++) {
@@ -65,9 +66,9 @@ public class TopoBFS {
         int V = 6;
 
         // Create adjacency list
-        java.util.ArrayList<java.util.ArrayList<Integer>> adj = new java.util.ArrayList<>();
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
-            adj.add(new java.util.ArrayList<>());
+            adj.add(new ArrayList<>());
         }
 
         // Adding edges

@@ -124,3 +124,29 @@ public class RecordDemo {
 // Useful built-in method for converting given Integer to String
 Integer.toBinaryString(num)
 
+
+Important: In java you can also have a record with 3 elements. like this - 
+
+// Defining a record with 3 fields
+public record Point3D(int x, int y, int z) {}
+
+// Alternative example with mixed data types
+public record Product(String id, String name, double price) {}
+
+
+public class Main {
+    public static void main(String[] args) {
+        // 1. Initialize the record with three values
+        Point3D point = new Point3D(10, 20, 30);
+
+        // 2. Access values using the auto-generated getter methods
+        System.out.println("X coordinate: " + point.x());
+        System.out.println("Y coordinate: " + point.y());
+        System.out.println("Z coordinate: " + point.z());
+
+        // 3. Built-in toString() automatically formats all three values
+        System.out.println(point); // Prints: Point3D[x=10, y=20, z=30]
+    }
+}
+
+

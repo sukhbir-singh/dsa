@@ -252,3 +252,24 @@ No accumulators, no extra context from the caller — just state in, answer out.
 
 - In memorization DP, you always have auxiliary space. For avoiding that, you should move to tabulation DP. 
 
+# Graph
+
+- In topo sort using DFS, it is sometimes helpful to use stack for keeping values of topological sortings. Because at the top you have node which is starting node of topo sort.
+
+- Remember: Dijkstra algorithm is nothing special but just an BFS algorithm with priority queue where each entry is {distance, point}. So it picks item which is smallest distance first and then process it like finding neighbours, etc.
+
+
+>> Trick
+This is very useful for moving to all directions in grid.
+int[][] adj = {
+            {1,0}, {0,1}, {-1,0}, {0,-1},
+            {1,1}, {-1,-1}, {1,-1}, {-1,1}
+        };
+
+# Learnings
+- For calculating total ways in a graph, you have to add ways from different paths.
+- In undirected graphs, you need to add both edges from -> to and to -> from.
+- For naming, use word node in graph questions and for adjancy list, better name for variable would be graph.
+
+
+
