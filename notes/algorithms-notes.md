@@ -20,3 +20,11 @@ use one 3-state color array.
 Encountering color 1 means cycle.
 
 So your current approach is correct and standard for directed graphs.
+
+# Time complexity of DFS/BFS
+O(E+N)
+
+>> Important Learning
+If edge list is given and you have to find shortest distance from src to all nodes, then prefer Bellman Ford Algorithm. It is much simpler to implement and understand.
+
+
