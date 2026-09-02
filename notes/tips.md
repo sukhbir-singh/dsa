@@ -272,4 +272,14 @@ int[][] adj = {
 - For naming, use word node in graph questions and for adjancy list, better name for variable would be graph.
 
 
+# Note: 
+- In 2d array questions, if you need to check if a coordinate is already set or not. Better to use a visited 2D array instead of set. Set will also work and will keep things minimal but 2D visited array would be much simpler.
+
+- In disjoint data structure questions on 2d array, dont try to make disjoint set data structure itself too complex with external details. Instead just use disjoint set to check if two nodes are already connected or not, other wise connect them if they are adjacent to each other.
+
+# Super Important (Very important) - I came across this bug in one of the problem
+In disjoint set problems and implementations, do not directly use parent[i] because its possible that two nodes from same group can have differnt immediate parent. So instead use find(int id) method to find the root of the group for both nodes.
+
+- For applying disjoint set on 2d matrix, you need to convert each cell to an integer id. Then only proceed with ds set algorithms.
+
 
