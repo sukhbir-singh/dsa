@@ -232,3 +232,66 @@ StringBuilder temp = new StringBuilder(word);
 temp.deleteCharAt(i);
 String predecessor = temp.toString();
 
+
+- For storing unique combinations of few integers, you can use set of list type. 
+
+Example:
+
+Set<List<Integer>> st = new HashSet<>();
+
+jshell> List<Integer> l1 = new ArrayList<>();
+jshell> l1.add(1)
+jshell> l1.add(2)
+jshell> l1.add(3)
+jshell> st.add(l1)
+$7 ==> true
+
+jshell> st
+st ==> [[1, 2, 3]]
+
+jshell> List<Integer> l2 = new ArrayList<>();
+jshell> List<Integer> l3 = new ArrayList<>()
+jshell> l2.add(3)
+jshell> l2.add(23)
+jshell> l3.add(1)
+jshell> l3.add(2)
+jshell> l3.add(3)
+
+jshell> l1
+l1 ==> [1, 2, 3]
+
+jshell> l2
+l2 ==> [3, 23]
+
+jshell> l3
+l3 ==> [1, 2, 3]
+
+jshell> st
+st ==> [[1, 2, 3]]
+
+jshell> st.add(l2)
+$20 ==> true
+
+jshell> st
+st ==> [[1, 2, 3], [3, 23]]
+
+jshell> st.add(l3)
+$22 ==> false
+
+jshell> st
+st ==> [[1, 2, 3], [3, 23]]
+
+
+# Important: Different ways to convert array to list
+
+int[] primitiveArray = {1, 2, 3};
+
+List<Integer> list = Arrays.stream(primitiveArray)
+                           .boxed() // Converts int to Integer
+                           .collect(Collectors.toList());
+
+Integer[] arr = {nums[i], nums[j], nums[k]}; // Make sure to use Integer[] and not int[]
+List<Integer> list = new ArrayList<>();
+Collections.addAll(list, arr);
+
+

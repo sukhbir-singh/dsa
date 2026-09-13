@@ -282,4 +282,9 @@ In disjoint set problems and implementations, do not directly use parent[i] beca
 
 - For applying disjoint set on 2d matrix, you need to convert each cell to an integer id. Then only proceed with ds set algorithms.
 
+- While solving 2sum, 3sum like questions, be mindful that you should not save elements in pure set or map blindly. Instead keep index as well along with number in order to avoid the duplicate entries.
+
+- In most of the questions, try observation based approach. This will help you in giving right direction for the solution. Observe carefully and see how you can progress in the question, try examples, etc
+
+
 

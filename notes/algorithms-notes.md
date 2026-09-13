@@ -28,3 +28,23 @@ O(E+N)
 If edge list is given and you have to find shortest distance from src to all nodes, then prefer Bellman Ford Algorithm. It is much simpler to implement and understand.
 
 
+
+# Moore's voting algorithm
+
+Imagine a battlefield where different numbers represent different armies. 
+When two different numbers meet, they fight and eliminate each other (1-to-1 cancellation).
+Since the true majority element makes up more than half of the entire population, it can fight all other elements combined and still have at least one survivor standing at the end.
+
+- Realisation: In lots of array question, you dont need to save prefix sum entire array. you can just loop and calculate total sum till now and apply the algo.
+
+
+# Shell Sort
+- Sort array by taking multiple iterations. first floor(n/2) distance elements are compared and swaped and then n/4, ...
+- This algo is better than insertion sort
+
+
+>> Revise merge sort and quick sort - these are some of the most important algorithms
+
+
+
+

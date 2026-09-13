@@ -150,3 +150,12 @@ public class Main {
 }
 
 
+// Learning - each on right side has to be explicitely converted to long otherwise they will default adds up as int and integer overflow will be observed.
+long sum = (long)nums[i] + (long)nums[j] + (long)nums[k] + (long)nums[l];
+
+- You can use like this when you have to save multiple integers together. I mean int[]
+private Map<int[], List<int[]>> graph;
+
+- Two ways to convert number to long:
+(long)nums[i]*2  OR  nums[i]*2L
+
