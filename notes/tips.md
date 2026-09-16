@@ -286,5 +286,13 @@ In disjoint set problems and implementations, do not directly use parent[i] beca
 
 - In most of the questions, try observation based approach. This will help you in giving right direction for the solution. Observe carefully and see how you can progress in the question, try examples, etc
 
+- In 2D array, mapping each cell to single number is very helpful. For this you just have to divide by column counts and module by column count. Helpful in questions like binary search on 2D matrix and dijkstra algo etc.
+
+# Important Tips for LinkedList Questions
+- In LinkedList questions, recursion plays a very important role. It is widely used in LL questions.
+- For linked list questions, always use dummy node at the begining. it will make things very simple in most of the questions.
+
+
+
 
 

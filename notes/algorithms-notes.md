@@ -46,5 +46,21 @@ Since the true majority element makes up more than half of the entire population
 >> Revise merge sort and quick sort - these are some of the most important algorithms
 
 
+# Remember this Reverse LL Code
+
+// just 2 variables are sufficient
+private ListNode reverseList(ListNode head) {
+    ListNode prev = null;
+    ListNode current = head;
+
+    while (current != null) {
+        ListNode next = current.next;
+        current.next = prev;
+        prev = current;
+        current = next;
+    }
+
+    return prev;
+}
 
 

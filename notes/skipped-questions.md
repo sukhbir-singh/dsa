@@ -10,7 +10,8 @@ Strongly connected components
 - https://leetcode.com/problems/maximum-number-of-non-overlapping-substrings/description/
 
 
+Peak element - did not understand the binary search intuition
+https://leetcode.com/problems/find-a-peak-element-ii/description/
 
-
-
+https://leetcode.com/problems/copy-list-with-random-pointer/
 
