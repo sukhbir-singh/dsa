@@ -295,3 +295,27 @@ List<Integer> list = new ArrayList<>();
 Collections.addAll(list, arr);
 
 
+# How to set particular character in a string
+
+1. Using StringBuilder
+
+String original = "Java";
+StringBuilder sb = new StringBuilder(original);
+
+// Change character at index 2 to 'v'
+sb.setCharAt(2, 'v'); 
+
+String result = sb.toString();
+System.out.println(result); // Output: Java
+
+
+2. Substring
+
+String original = "Bate";
+int index = 2;
+char newChar = 't';
+
+// Combine characters before and after the target index
+String result = original.substring(0, index) + newChar + original.substring(index + 1);
+System.out.println(result); // Output: Bite
+

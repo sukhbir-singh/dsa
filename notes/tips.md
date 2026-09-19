@@ -293,6 +293,15 @@ In disjoint set problems and implementations, do not directly use parent[i] beca
 - For linked list questions, always use dummy node at the begining. it will make things very simple in most of the questions.
 
 
+- In DP questions, mostly you have to explore all possibilities and then find best answer out of it.
 
+DFS and backtracking are closely related, but not identical.
 
+- DFS is an exploration strategy: follow one branch as deeply as possible, then return.
+- Backtracking adds decision management: choose an option, explore it, then undo the choice before trying another option.
+
+- Calculations on rough page is important with good examples. Dont underestimate it.
+
+# Monotonic Stack Guidelines
+https://leetcode.com/discuss/post/5148505/monotonic-stack-guide-list-of-problems-b-rnuj/
 
