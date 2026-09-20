@@ -305,3 +305,14 @@ DFS and backtracking are closely related, but not identical.
 # Monotonic Stack Guidelines
 https://leetcode.com/discuss/post/5148505/monotonic-stack-guide-list-of-problems-b-rnuj/
 
+- Note: Monotonic is a generalised concept, in questions you can use monotonic stack or monotonic queue as required.
+
+
+>> Trick:
+- Remember this - In some questions, you cannot find the answer directly like finding total number of subarrays with exact k unique numbers. So think of breaking down it in subproblems like below. It is useful in many cases. You can just solve the subproblem and that will result in overall solution. 
+- This type of thought process is very useful in lots of hard problems. Keep this tooling in mind.
+
+Result => finding total subarrays with exact k unique integers = (findings subarrays with <= k integers) - (findings subarrays with <= k-1 integers)
+
+
+

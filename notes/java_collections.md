@@ -319,3 +319,10 @@ char newChar = 't';
 String result = original.substring(0, index) + newChar + original.substring(index + 1);
 System.out.println(result); // Output: Bite
 
+# How to Define Double ended queue in Java
+Deque<Integer> dq = new ArrayDeque<>();
+
+>> Methods: (First, Last - remove, add, get)
+addFirst, addLast, add, offerFirst, offerLast, offer, removeFirst, remove, removeLast, pollFirst, poll, pollLast, getFirst, element, getLast, peekFirst, peek, peekLast
+
+
