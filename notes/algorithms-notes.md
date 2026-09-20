@@ -64,3 +64,12 @@ private ListNode reverseList(ListNode head) {
 }
 
 
+# String Advanced Algorithms (Not Important)
+- KMP algorithm for substring matching
+- Z Algorithm (create z array)
+- Rabin Karp Algorithm (compare hash value)
+
+
+>> Hint: Proper prefix which is also a suffix => LPS array in KMP algorithm
+
+

@@ -159,3 +159,6 @@ private Map<int[], List<int[]>> graph;
 - Two ways to convert number to long:
 (long)nums[i]*2  OR  nums[i]*2L
 
+- Useful shortcut in many questions
+long modValue = (long) 1e9 + 7;
+
