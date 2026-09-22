@@ -315,4 +315,23 @@ https://leetcode.com/discuss/post/5148505/monotonic-stack-guide-list-of-problems
 Result => finding total subarrays with exact k unique integers = (findings subarrays with <= k integers) - (findings subarrays with <= k-1 integers)
 
 
+# Binary Tree
+- For finding LCA, it would be easier to just return the matched node(l, or r) as soon as you find it to parent recursive call. This way you can save lots of below recursion calls.
+- Code for finding LCA is quite simple. Just few lines of code in recursive method.
+
+- While solving binary tree questions, first thing you should decide is which traversel to select - BFS or DFS (pre, in, post). And then decide your algorithm.
+
+- In some questions, you might need to iterate from node to its parent like if you want to do BFS in all directions. Then in such question, you should iterate the tree and create a map of child -> parent relation. That will be used in BFS all direction iterations.
+
+- Along with Inorder, preorder traversals, Also keep reverse inorder, reverse preorder in mind. Based on question pattern they might be useful many times.
+
+Note: An inorder traversal combined with a preorder traversal creates a unique binary tree, while a preorder and postorder combination does not because only the inorder traversal provides a boundary line between the left and right subtrees.
+
+>> Why Preorder + Postorder Fails
+The Ambiguity: Neither of these methods places the root between its left and right children.
+
+Morris Traversal for Binary Tree - Striver explained it very well
+This is a good algorithm, good to have it in your toolkit
+https://www.youtube.com/watch?v=80Zug6D1_r4
+
 

@@ -33,4 +33,24 @@ https://leetcode.com/problems/lfu-cache/description/
 
 
 
+https://leetcode.com/problems/minimum-window-subsequence/description/
+https://leetcode.com/problems/count-palindromic-subsequences/description/
+
+
+# Heaps
+https://leetcode.com/problems/design-twitter/description/
+https://leetcode.com/problems/minimum-cost-to-connect-sticks/description/
+https://leetcode.com/problems/find-median-from-data-stream/description/
+https://leetcode.com/problems/top-k-frequent-elements/description/
+
+# Tree
+https://leetcode.com/problems/maximum-width-of-binary-tree/description/
+https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/description/
+https://leetcode.com/problems/count-complete-tree-nodes/description/
+https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/
+https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/
+https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/
+https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/
+
+
 

@@ -11,4 +11,6 @@
 
 - Learn A* algorithm (which helps in optimizing finding algorithms)
 
+- Learn about segment trees
+
 
