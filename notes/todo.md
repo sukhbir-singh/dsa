@@ -13,4 +13,6 @@
 
 - Learn about segment trees
 
+- Learn about Line Sweep Algorithm
+
 

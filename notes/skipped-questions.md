@@ -53,4 +53,7 @@ https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-t
 https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/
 
 
+# Frequently asked question
+https://leetcode.com/problems/apply-substitutions/description/
+
 
