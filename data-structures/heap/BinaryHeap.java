@@ -1,3 +1,4 @@
+package heap;
 public class BinaryHeap {
   // Maximum elements that can be stored in heap
   static int capacity;  

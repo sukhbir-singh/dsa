@@ -24,6 +24,19 @@ public class LRUCache {
     private Node head; // Dummy head pointer
     private Node tail; // Dummy tail pointer
 
+    // Method to initialise cache with given capacity
+    public LRUCache(int capacity) {
+        cap = capacity; // Set the capacity
+        mpp = new HashMap<>(); // Clear the cache
+
+        head = new Node();
+        tail = new Node();
+
+        // Make the connections
+        head.next = tail;
+        tail.prev = head;
+    }
+
     /* Private method to delete node
     from doubly linked list */
     private void deleteNode(Node node) {
@@ -45,19 +58,6 @@ public class LRUCache {
         nextNode.prev = node;
         node.prev = head;
         node.next = nextNode;
-    }
-
-    // Method to initialise cache with given capacity
-    public LRUCache(int capacity) {
-        cap = capacity; // Set the capacity
-        mpp = new HashMap<>(); // Clear the cache
-
-        head = new Node();
-        tail = new Node();
-
-        // Make the connections
-        head.next = tail;
-        tail.prev = head;
     }
 
     // Method to get the key from cache
