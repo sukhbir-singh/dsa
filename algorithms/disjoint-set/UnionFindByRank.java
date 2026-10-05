@@ -1,19 +1,16 @@
-package algorithms.graph;
-
 /**
- * Highly optimized Disjoint Set Union (DSU) / Union-Find data structure - THIS IS MORE INTUITIVE
+ * Highly optimized Disjoint Set Union (DSU) using Union by Rank and Path Compression.
  */
-public class UnionFindBySize {
+public class UnionFindByRank {
     private final int[] parent;
-    private final int[] size;
+    private final int[] rank;
 
     // 1. Initialize the structure with 'n' elements
-    public UnionFindBySize(int n) {
+    public UnionFindByRank(int n) {
         parent = new int[n];
-        size = new int[n];
+        rank = new int[n]; // Initialized to 0 by default in Java
         for (int i = 0; i < n; i++) {
             parent[i] = i; // Each element is its own parent initially
-            size[i] = 1;   // Each set initially has a size of 1
         }
     }
 
@@ -22,11 +19,11 @@ public class UnionFindBySize {
         if (parent[i] == i) {
             return i;
         }
-        // Path Compression: Assign the root directly to parent[i]
+        // Path Compression: Flattens the structure on the way back up
         return parent[i] = find(parent[i]);
     }
 
-    // 3. Union operation by Size
+    // 3. Union operation by Rank
     public boolean union(int i, int j) {
         int rootI = find(i);
         int rootJ = find(j);
@@ -36,13 +33,15 @@ public class UnionFindBySize {
             return false; 
         }
 
-        // Attach the smaller tree under the root of the larger tree
-        if (size[rootI] < size[rootJ]) {
+        // Attach the tree with lower rank under the root of the tree with higher rank
+        if (rank[rootI] < rank[rootJ]) {
             parent[rootI] = rootJ;
-            size[rootJ] += size[rootI];
-        } else {
+        } else if (rank[rootI] > rank[rootJ]) {
             parent[rootJ] = rootI;
-            size[rootI] += size[rootJ];
+        } else {
+            // If ranks are equal, pick one to be parent and increment its rank
+            parent[rootJ] = rootI;
+            rank[rootI]++;
         }
         return true;
     }

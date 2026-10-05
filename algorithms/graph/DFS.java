@@ -1,5 +1,6 @@
 package algorithms.graph;
 import java.util.*;
+
 class DFS
 {
     public static void dfs(int node, boolean vis[], List<List<Integer>> adj, ArrayList<Integer> storeDfs) {
@@ -38,7 +39,7 @@ class DFS
 
         // adding new arraylists to 'adj' to add neighbour nodes
         for (int i = 0; i < 6; i++) {
-            adj.add(new ArrayList < > ());
+            adj.add(new ArrayList<>());
         }
 
         adj.get(1).add(2);

@@ -1,18 +1,17 @@
-package algorithms.graph;
-
 /**
- * Highly optimized Disjoint Set Union (DSU) using Union by Rank and Path Compression.
+ * Highly optimized Disjoint Set Union (DSU) / Union-Find data structure - THIS IS MORE INTUITIVE
  */
-public class UnionFindByRank {
+public class UnionFindBySize {
     private final int[] parent;
-    private final int[] rank;
+    private final int[] size;
 
     // 1. Initialize the structure with 'n' elements
-    public UnionFindByRank(int n) {
+    public UnionFindBySize(int n) {
         parent = new int[n];
-        rank = new int[n]; // Initialized to 0 by default in Java
+        size = new int[n];
         for (int i = 0; i < n; i++) {
             parent[i] = i; // Each element is its own parent initially
+            size[i] = 1;   // Each set initially has a size of 1
         }
     }
 
@@ -21,11 +20,11 @@ public class UnionFindByRank {
         if (parent[i] == i) {
             return i;
         }
-        // Path Compression: Flattens the structure on the way back up
+        // Path Compression: Assign the root directly to parent[i]
         return parent[i] = find(parent[i]);
     }
 
-    // 3. Union operation by Rank
+    // 3. Union operation by Size
     public boolean union(int i, int j) {
         int rootI = find(i);
         int rootJ = find(j);
@@ -35,15 +34,13 @@ public class UnionFindByRank {
             return false; 
         }
 
-        // Attach the tree with lower rank under the root of the tree with higher rank
-        if (rank[rootI] < rank[rootJ]) {
+        // Attach the smaller tree under the root of the larger tree
+        if (size[rootI] < size[rootJ]) {
             parent[rootI] = rootJ;
-        } else if (rank[rootI] > rank[rootJ]) {
-            parent[rootJ] = rootI;
+            size[rootJ] += size[rootI];
         } else {
-            // If ranks are equal, pick one to be parent and increment its rank
             parent[rootJ] = rootI;
-            rank[rootI]++;
+            size[rootI] += size[rootJ];
         }
         return true;
     }

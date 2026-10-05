@@ -1,5 +1,6 @@
 package algorithms.graph;
 import java.util.*;
+
 // Method 1: visited + InStack arrays
 public class CycleDetectionDirectedGraph {
     public boolean dfs(int node, List<List<Integer>> adj, boolean[] visit, boolean[] inStack) {

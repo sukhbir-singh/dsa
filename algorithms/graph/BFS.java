@@ -1,5 +1,8 @@
 package algorithms.graph;
 import java.util.*;
+
+// should have passed source node, so that we can call it for all the nodes for 
+// supporting disconnected components of graph
 class BFS {
     // Function to return Breadth First Traversal of given graph.
     public List<Integer> bfsOfGraph(int V, List<List<Integer>> adj) {
@@ -31,7 +34,7 @@ class BFS {
     public static void main(String args[]) {
         List<List<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-            adj.add(new ArrayList < > ());
+            adj.add(new ArrayList<>());
         }
 
         adj.get(0).add(1);
