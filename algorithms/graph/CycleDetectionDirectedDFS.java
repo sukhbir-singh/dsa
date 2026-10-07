@@ -2,7 +2,7 @@ package algorithms.graph;
 import java.util.*;
 
 // Method 1: visited + InStack arrays
-public class CycleDetectionDirectedGraph {
+public class CycleDetectionDirectedDFS {
     public boolean dfs(int node, List<List<Integer>> adj, boolean[] visit, boolean[] inStack) {
         // If the node is already in the stack, we have a cycle.
         if (inStack[node]) {
