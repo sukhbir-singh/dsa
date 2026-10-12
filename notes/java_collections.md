@@ -326,3 +326,13 @@ Deque<Integer> dq = new ArrayDeque<>();
 addFirst, addLast, add, offerFirst, offerLast, offer, removeFirst, remove, removeLast, pollFirst, poll, pollLast, getFirst, element, getLast, peekFirst, peek, peekLast
 
 
+# Binary Search exists in collections class
+int index = Collections.binarySearch(list, num);
+
+Returns:
+the index of the search key, if it is contained in the list; otherwise, (-(insertion point) - 1). The insertion point is defined as the point at which the key would be inserted into the list: the index of the first element greater than the key, or list.size() if all elements in the list are less than the specified key. Note that this guarantees that the return value will be >= 0 if and only if the key is found.
+
+// If the element is not found, binarySearch returns: -(insertion_point) - 1
+if (idx < 0) {
+    idx = -(idx + 1);
+}
