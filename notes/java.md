@@ -3,7 +3,7 @@ double scientificValue = 1e6; // Represents 1 * 10^6
 double result = Math.pow(10, 6);
 
 
-// checking if divisible numbers are perfectly divisible or not
+// checking if divisible double numbers are perfectly divisible or not
 
 public static boolean isPerfectDivision(double dividend, double divisor) {
     // Check for division by zero or invalid inputs (NaN, Infinity)
@@ -32,7 +32,7 @@ sb.append(ch);
 sb.toString();
 
 // java substring method - remember that endIndex is excluded.
-substring(int beginIndex, int endIndex)
+str.substring(int beginIndex, int endIndex)
 
 // Java method reference
 The :: syntax is a method reference operator introduced in Java 8. It provides a concise way to refer to a method without executing it immediately or providing its implementation details (which is the purpose of a lambda expression).
@@ -51,7 +51,7 @@ Character.isDigit(ch) -> To check if character is digit or not.
 - Maths: In a string of digits, there are n/2 odd places and (n+1)/2 even places. both with floor value.
 
 - In java, one good way to write big integers those are powers of 10 is by using e. But remember that it will always return double.
-Shortcut for remembering e = 1o^
+Shortcut for remembering e = 10^
 
 So in this Example:-
 
@@ -121,7 +121,7 @@ public class RecordDemo {
     }
 }
 
-// Useful built-in method for converting given Integer to String
+// Useful built-in method for converting given Integer to binary format
 Integer.toBinaryString(num)
 
 

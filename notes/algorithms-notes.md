@@ -35,6 +35,10 @@ Imagine a battlefield where different numbers represent different armies.
 When two different numbers meet, they fight and eliminate each other (1-to-1 cancellation).
 Since the true majority element makes up more than half of the entire population, it can fight all other elements combined and still have at least one survivor standing at the end.
 
+Example: LeetCode 169 and LeetCode 229 - Print element that appears more than n/2 times
+
+
+We can use dynamic prefix sum, instead of dedicated prefix sum array:
 - Realisation: In lots of array question, you dont need to save prefix sum entire array. you can just loop and calculate total sum till now and apply the algo.
 
 

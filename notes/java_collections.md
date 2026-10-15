@@ -1,5 +1,7 @@
 
-Good method to print array.
+(a, b) -> Integer.compare(b, a) is a Java lambda expression
+
+// Good method to print array
 Arrays.toString(arr)
 
 // sorting of array
@@ -57,6 +59,7 @@ for (Map.Entry<String, String> entry : map.entrySet()) {
 // Posted by ScArcher2, modified by community. See post 'Timeline' for change history
 // Retrieved 2025-12-13, License - CC BY-SA 4.0
 
+// most useful
 for (var entry : map.entrySet()) {
     System.out.println(entry.getKey() + "/" + entry.getValue());
 }
@@ -70,7 +73,8 @@ List<String> charStrings = new ArrayList<String>();
 // telling the sort algorithm to place a first. Otherwise, a positive
 // number will be returned, telling it to place a second.
 // This results in a longest to shortest sorted list of the strings.
-Collections.sort(charStrings, (a, b) -> b.length() - a.length());
+
+Collections.sort(charStrings, (a, b) -> b.length() - a.length());   // sort by decending order of length
 
 --------------------------------------------------------------------------------
 
@@ -81,12 +85,12 @@ Map<Character, Integer> counts = new HashMap<>();
 for (char c : s.toCharArray()) {
     counts.put(c, counts.getOrDefault(c, 0) + 1);
 }
-        
+
 // Make a list of the keys, sorted by frequency.
 List<Character> characters = new ArrayList<>(counts.keySet());        
 Collections.sort(characters, (a, b) -> counts.get(b) - counts.get(a));
 
-- Remeber that valueSet() method does not exist in java for hash map. only keyset and entryset exists.
+- Remember that valueSet() method does not exist in java for hash map. Only keyset and entryset exists.
 
 - ArrayList has one useful method to remove the last element. This is quite useful in recursion questions.
 Useful Method: list.removeLast(); // Introduced in Java 21, so it won't work in older java versions
@@ -95,7 +99,7 @@ Instead of this method use: list.remove(list.size()-1);
 
 --------------------------------------------------------------------------------
 
-- This is important for priority queue implementation in questions.
+- This is important for priority queue implementation in questions. For using it as maxHeap:
 PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
 
 - Remember this: The LinkedList class provided in the Java Collections Framework (specifically java.util.LinkedList) is a doubly linked list implementation. 
@@ -104,11 +108,10 @@ PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder())
 > int[][] intervals;
 > Arrays.sort(intervals, (arr1, arr2) -> arr1[0] - arr2[0]);
 
-Another way: Arrays.sort(intervals, Comparator.comparingInt(a -> a[1]));
-
 Important:
 - In Java, you can define List<int[]> res = new ArrayList<>(); because arrays are objects, which makes them reference types. 
 - While Java Generics do not allow primitive types (like int) as type parameters, they fully support reference types, including array types.
+
 
 - You can directly convert list to array using helper method.
 List<int[]> res = new ArrayList<>();
@@ -282,6 +285,15 @@ jshell> st
 st ==> [[1, 2, 3], [3, 23]]
 
 
+# Both Methods work for defining Array
+
+jshell> int[] arr = new int[] {2,4}
+arr ==> int[2] { 2, 4 }
+
+jshell> int[] arr2 = {4,6,2}
+arr2 ==> int[3] { 4, 6, 2 }
+
+
 # Important: Different ways to convert array to list
 
 int[] primitiveArray = {1, 2, 3};
@@ -330,7 +342,7 @@ addFirst, addLast, add, offerFirst, offerLast, offer, removeFirst, remove, remov
 int index = Collections.binarySearch(list, num);
 
 Returns:
-the index of the search key, if it is contained in the list; otherwise, (-(insertion point) - 1). The insertion point is defined as the point at which the key would be inserted into the list: the index of the first element greater than the key, or list.size() if all elements in the list are less than the specified key. Note that this guarantees that the return value will be >= 0 if and only if the key is found.
+the index of the search key, if it is contained in the list; otherwise,  (-(insertion point) - 1). The insertion point is defined as the point at which the key would be inserted into the list: the index of the first element greater than the key, or list.size() if all elements in the list are less than the specified key. Note that this guarantees that the return value will be >= 0 if and only if the key is found.
 
 // If the element is not found, binarySearch returns: -(insertion_point) - 1
 if (idx < 0) {
