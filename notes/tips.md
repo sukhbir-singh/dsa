@@ -170,9 +170,15 @@ n + n/2 + n/4 + n/8 + ... = O(n)
 
 - It is also a good practice to iterate couple of examples to understand the way of solution and how it is working. This also gives direction to some patterns that can help in solving the problem.
 
-=- Useful: very nice pattern for priority queue: reprocess elements using a temporary list.
+- Useful: very nice pattern for priority queue: reprocess elements using a temporary list.
+In short: temporarily remove values from Priority queue while building one group, keep them in list and then re-add values that still have unused copies so they can be processed in a later group.
 
-=- One good technique, I learnt is that you just pick one element from the list like the first element of the array and then keep decreasing the number and find it in the map till the point it exists. In this way, you know the start of the sequence. This approach is helpful in many questions to find start of the sequences. And also help in coming up with most optimal solution.
+Example: LC-846, This pattern appears in the Hand of Straights solution. The task is to split the cards into groups of consecutive numbers.
+
+- One good technique, I learnt is that you just pick one element from the list like the first element of the array and then keep decreasing the number by 1 and find it in the map till the point it exists. In this way, you know the start of the sequence. This approach is helpful in many questions to find start of the sequences. And also help in coming up with most optimal solution.
+
+In short, Start counting upward only from numbers whose predecessor (n - 1) is absent.
+Example: LC-128
 
 - Trick: In questions when you have to create a new linked list and return - Always remember to create a one node list first and then keep adding elements to it. In the end, return head.next. In short always keep a dummy node and add other nodes to it.
 
@@ -183,7 +189,8 @@ n + n/2 + n/4 + n/8 + ... = O(n)
 - Sometimes recursively iterating all solutions is also a brute force implementation.
 Time complexity for recursion is (num_of_branches)^N
 
-=- "As time goes by" simulation is useful in many scheduling questions. Video: https://www.youtube.com/watch?v=AsGzwR_FWok
+- "As time goes by" simulation is useful in many scheduling questions. Video: https://www.youtube.com/watch?v=AsGzwR_FWok
+Idea: See from outside of the railway station, and note down the time when train arrives (+1) and departures (-1), the maximum counter value at any time is the minimum platforms required to accomodate all trains.
 
 - I feel most of the greedy algorithms are intuition based. Think through the examples and you will find a way to solve them.
 
@@ -226,7 +233,11 @@ Note: vertical line based thinking and traversal for tree is useful in other que
 
 - Remember: Two sum problem on sorted array - can be solved easily using two pointer. This is very useful to solve 3sum, 4sum etc.
 
-=- Finding the swapped pair in the almost sorted array in O(n) time is an important trick! (Reference: https://leetcode.com/problems/recover-binary-search-tree/description/)
+- Finding the swapped pair in the almost sorted array in O(n) time is an important trick! (Reference: https://leetcode.com/problems/recover-binary-search-tree/description/)
+Logic: In sorted array, iterate from left to right. And whenever you find reverse numbers like nums[i] > nums[i+1], then update x and y. update x only once, but keep updating y till you reach end of the array.
+
+The key idea is: keep the first x, but keep updating y until the final inversion. If the swapped elements were next to each other, there would only be one inversion, and that single inversion gives both values.
+Example: nums = [1, 6, 3, 4, 5, 2, 7]
 
 - Remember: In BFS, visit node and then add it to the queue. But In DFS, visit node in the first line of recursion method.
 
@@ -385,9 +396,14 @@ Note: An inorder traversal combined with a preorder traversal creates a unique b
 >> Why Preorder + Postorder Fails
 The Ambiguity: Neither of these methods places the root between its left and right children.
 
-=- Morris Traversal for Binary Tree - Striver explained it very well. This is a good algorithm, good to have it in your toolkit.
+- Morris Traversal for Binary Tree - Striver explained it very well. This is a good algorithm, good to have it in your toolkit. Special thing about morris traversal is that it does not consume any extra space. Space complexity is O(1). It uses threaded binary tree. 
+Remember: Morris traversal is iterative solution using a single while loop
 Video: https://www.youtube.com/watch?v=80Zug6D1_r4
 
+- Idea: From last node of subtree, make a pointer to root node. Before moving to left subtree, find rightmost node and connect to root. After that move to left subtree.
+
+- From any root node, how will be decide if we want to go to left subtree or right subtree?
+If rightmost node already contains link then we remove link and go to right subtree, otherwise we create the link and move to left subtree.
 
 - Realization: In matrix traversal question, better to keep 2D array for visited arrary. If you use set, then you also need to implement equals and hashCode method in the class. Which we can try to avoid for any bugs.
 
