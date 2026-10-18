@@ -1,13 +1,18 @@
 import java.util.*;
 // Good recursive implementation with loop approach: For picking each element, iterate over the loop.
+// Alternative pick/not-pick approach: pick candidates[index] and recurse from index + 1,
+// for the not-pick branch,skip all adjacent copies of that value to avoid duplicate combinations.
+
+// Obviously, Set of list type can deduplicate the combinations but it will be inefficient and we are going over all branches. below algo is better.
 class Solution {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-        Arrays.sort(candidates);
+        Arrays.sort(candidates);  // important
         List<List<Integer>> res = new ArrayList<>();
         helper(0, candidates, target, new ArrayList<>(), res);
         return res;
     }
 
+    // left should be named remaining or remain
     private void helper(int index, int[] candidates, int left, List<Integer> list, List<List<Integer>> res) {
         if (left < 0) {
             return;
@@ -17,7 +22,7 @@ class Solution {
         }
 
         for (int i=index; i<candidates.length; i++) {
-            if (i > index && candidates[i] == candidates[i-1]) continue;
+            if (i > index && candidates[i] == candidates[i-1]) continue; // important to avoid duplicate starting points for coming up with different combinations
             if (candidates[i] > left) break;
 
             list.add(candidates[i]);

@@ -1,5 +1,10 @@
 import java.util.*;
-// for this question: refer striver's solution. that's is better and simpler.
+// for this question: refer striver's solution. that's is better and simpler -> 2 learnings: only take if current number <= target
+// and only 2 cases are sufficient: take (remain on same index) and not take (move to next)
+// why take (same index) covers other cases - because in next recursion you will try to take and not-take this num again.
+
+// Another way -one more point to remember: when you have infinite suppy, then in each recursion call you can think of picking a number 
+// using loop like first number, second number etc.
 class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<>();

@@ -8,7 +8,7 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-// good use of recusion
+// good use of recursion
 class Solution {
     public ListNode reverseKGroup(ListNode head, int k) {
         ListNode kth = head;
@@ -19,7 +19,7 @@ class Solution {
             count++;
         }
 
-        if (count < k || kth == null) {
+        if (kth == null) {
             return head;
         }
 
@@ -54,6 +54,8 @@ class Solution {
 }
 
 // iterative solution
+// ... (groupPrev) groupFirstElement ... groupLastElement (groupNext)
+// In above list, groupFirstElement to groupLastElement will be reversed
 class SolutionIterative {
     public ListNode reverseKGroup(ListNode head, int k) {
         if (head == null || k <= 1) {

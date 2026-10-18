@@ -36,14 +36,17 @@ class Solution {
         return right+bottom;
     }
 }
+
 // bottom up dp - easier and cleaner
 class Solution2 {
     public int uniquePaths(int m, int n) {
         int[][] d = new int[m][n];
 
+        // only used for updating first row and first column
         for (int[] arr : d) {
             Arrays.fill(arr, 1);
         }
+
         for (int col = 1; col < m; ++col) {
             for (int row = 1; row < n; ++row) {
                 d[col][row] = d[col - 1][row] + d[col][row - 1];

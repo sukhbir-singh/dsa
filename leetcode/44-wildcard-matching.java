@@ -38,8 +38,10 @@ class Solution {
         boolean res = false;
         if (c1 == '*' || c2 == '*') {
             // this is very nice deduction in rough copy
-            boolean case1 = isMatchImp(s, p, ind1-1, ind2, dp);
-            boolean case2 = isMatchImp(s, p, ind1, ind2-1, dp);
+            // '*' either consumes one string character or matches an empty sequence.
+            // suppose star is present in first string
+            boolean case1 = isMatchImp(s, p, ind1-1, ind2, dp); // means does not match any char
+            boolean case2 = isMatchImp(s, p, ind1, ind2-1, dp); // means one char is matched
             res = case1 || case2;
 
         } else if (c1 == '?' || c2 == '?') {

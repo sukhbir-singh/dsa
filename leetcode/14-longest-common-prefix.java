@@ -20,7 +20,7 @@ class Solution {
             }
 
             if (!same) {
-                return strs[0].substring(0, p);
+                return strs[0].substring(0, p); // this is not needed as it will break after same = false
             } else {
                 p++;
             }

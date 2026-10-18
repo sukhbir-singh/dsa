@@ -10,6 +10,7 @@ import java.util.*;
  * }
  */
 // good example usage of priority queue.
+// other ways could be to merge 2-2 lines at a time
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists.length == 0) {

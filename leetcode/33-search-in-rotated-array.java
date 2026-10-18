@@ -4,11 +4,14 @@
 // 3. Directly find element using binary search -> best solution. I have implemented this.
 // 4. Striver's algo - good and simple algo. based on idea that we can make condition only on the sorted portion.
 
+// algorithm is based on finding if mid is in same target partition or not
+// Another very good idea: Find the index of the pivot element (the smallest element) using binary search
+// another: pivot + shifted binary search
 class Solution {
     public int search(int[] nums, int target) {
         int left = 0, right = nums.length-1;
         int ans = -1;
-        int tp = target >= nums[0] ? 1:2;
+        int tp = target >= nums[0] ? 1:2;  // deletermine in which part, target is present
         while (left <= right) {
             int mid = (left + right)/2;
 
@@ -18,7 +21,6 @@ class Solution {
 
             // if current part is same as target part - normal binary search
             // else move toward target part
-
             if ((tp == 1 && nums[mid] >= nums[0]) || (tp == 2 && nums[mid] < nums[0])) {
                 // same part
                 if (nums[mid] > target) {

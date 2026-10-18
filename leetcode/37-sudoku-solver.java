@@ -29,7 +29,7 @@ class Solution {
                 return true; // important - this is needed to be returned, so that board is not reset to .
             }
             
-            board[r][c] = '.'; 
+            board[r][c] = '.';  // reset
         }
         return false;
     }

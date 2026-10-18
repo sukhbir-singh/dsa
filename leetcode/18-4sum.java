@@ -1,5 +1,6 @@
 import java.util.*;
 
+// another way: with slight modification we can skip set as well and just process num which is != num-1
 class Solution {
     public List<List<Integer>> fourSum(int[] nums, int target) {
         Arrays.sort(nums);

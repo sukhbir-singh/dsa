@@ -1,5 +1,6 @@
 import java.util.*;
 
+// good pattern and logic
 class Solution {
     public void nextPermutation(int[] nums) {
         int index = -1;

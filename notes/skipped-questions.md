@@ -60,3 +60,6 @@ https://leetcode.com/problems/apply-substitutions/description/
 # DP
 https://leetcode.com/problems/closest-subsequence-sum/description/
 
+
+https://leetcode.com/problems/web-crawler/description/?envType=weekly-question&envId=2026-09-27
+

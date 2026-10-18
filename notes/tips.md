@@ -408,3 +408,22 @@ If rightmost node already contains link then we remove link and go to right subt
 - Realization: In matrix traversal question, better to keep 2D array for visited arrary. If you use set, then you also need to implement equals and hashCode method in the class. Which we can try to avoid for any bugs.
 
 - For BFS question, you don't even need a new method. You can just do it in original method itself.
+
+- solve() is a good default name for recursion method.
+
+- LL thoughts: fast-slow pointer, recursion, head might be removed, etc.
+
+- In recursion, when no extra parameter needs to be passed to recursion method, then you can just use the original method. No need to implement new method for purely recusion purpose.
+
+- Defining dummy node is one of the most important thing for linkedlist question.
+ListNode dummy = new ListNode(0, head);
+
+- prefixMax and suffixMax are also useful in some questions. Like what max you have seen on left side of current index = prefixMax value.
+
+- In DP with recursion, mostly base case you have to think carefully as sometimes you have to add some logic there like processing remaining elements all together for base case.
+
+- Divide and concuer is also useful in many questions.
+
+- DP thoughts: parameters, where to start - left top, right bottom (most of the time they are same), what dp array is storing, states
+
+

@@ -41,7 +41,7 @@ class Solution {
             int curH = height[ind];
             int nextPos = pge[ind];
 
-            if (curH == height[nextPos]) {
+            if (curH == height[nextPos]) { // redundant, below loop already covers it
                 ind = nextPos;
                 continue;
             }
@@ -89,6 +89,8 @@ class Solution {
 }
 
 // Easier solution using prefixMax and suffixMax
+// how to think about this solution: at each index, we are asking what max height we have seen on left side of this index and 
+// what max we have seen on right side of this index. We will take minimum of these.
 class Solution2 {
     public int trap(int[] height) {
         int len = height.length;

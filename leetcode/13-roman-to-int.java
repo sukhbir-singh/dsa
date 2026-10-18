@@ -1,5 +1,6 @@
 import java.util.*;
 // good observation: if next character is larger than previous, in that case substract and add to result
+// another solution is to iterate from right to left
 class Solution {
     public int romanToInt(String s) {
         Map<Character, Integer> mp = new HashMap<>();

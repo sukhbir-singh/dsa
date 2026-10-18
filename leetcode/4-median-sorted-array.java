@@ -1,4 +1,6 @@
 // definitely hard problem: thought process and implementation both are tough
+// why binary search - because in each partition just by checking the boundary numbers, we can determine the direction of movement. so binary search is effective here.
+// using binary search we are finding the right number of elements to take from first array
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int len1 = nums1.length;
@@ -7,9 +9,10 @@ class Solution {
             return findMedianSortedArrays(nums2, nums1);
         }
 
-        int left = 0, right = len1;
+        int left = 0, right = len1; // applying binary search on number of elements we need to take from first array
+
         // bucket size - number of elements on each side
-        int bucketSize = (len1+len2+1)/2;
+        int bucketSize = (len1+len2+1)/2; // taking one element extra on left side when total elements are odd
 
         double ans = 0.0;
         // remember that we are doing binary search on count of numbers to

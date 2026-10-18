@@ -27,7 +27,7 @@ class Solution {
         return head;
     }
 
-    private int recurse(ListNode head, int n) {
+    private int recurse(ListNode head, int n) { // parameter name should not be head here, better to use node
         if (head == null) {
             return 0;
         }

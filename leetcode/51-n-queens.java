@@ -1,7 +1,7 @@
 import java.util.*;
 
-// I realize that if i kept char array in the starting, that would have simplified the solution. As i just have to set particular char cell
-// for diagnols, you can also keep 2 arrays in recusion arguments and keep adding elements in them and later check if element is present in diagnol or not
+// I realize that if i kept char array in the starting, that would have simplified the solution. As i just have to set particular char cell.
+// Trick: for diagnols, you can also keep 2 arrays in recusion arguments and keep adding elements in them and later check if element is present in diagnol or not.
 class Solution {
     public List<List<String>> solveNQueens(int n) {
         List<List<String>> res = new ArrayList<>();
@@ -30,7 +30,7 @@ class Solution {
         }
 
         // try all possibilities for column
-        // set -> recuse -> unset
+        // set -> recurse -> unset
         for (int i=0; i<total; i++) {
             // check if we can place queeen in this column or not
             if (!canPlace(maze, row, i, total)) {

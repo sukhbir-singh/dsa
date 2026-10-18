@@ -1,7 +1,9 @@
 // kadane's algorithm: positive + positive = bigger positive value
 // if you found current subarray sum to be negative, throw it away. because adding to next positive will decrease its value.
 // negative sum should not be carried forward, otherwise sum will just reduce
-// other solution (slower) could be divide and concure - bestCombinedSum = numsArray[mid] + bestLeftSum + bestRightSum;
+
+// Other solution (slower) could be divide and concuer, bestCombinedSum = numsArray[mid] + bestLeftSum + bestRightSum;
+// logic behind divide and concuer, if mid element is part of answer then bestCombinedSum we already calculated, and if not then we are checking in left partition and right partition, answer would be either of these three values. left and right partition will be calculated using recursion.
 class Solution {
     public int maxSubArray(int[] nums) {
         int maxNum = Integer.MIN_VALUE;
