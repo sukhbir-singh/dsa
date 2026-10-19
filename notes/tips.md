@@ -426,4 +426,4 @@ ListNode dummy = new ListNode(0, head);
 
 - DP thoughts: parameters, where to start - left top, right bottom (most of the time they are same), what dp array is storing, states
 
-
+- In noticed that for top down DP, i mostly start from last and move towards start. For bottom up, its opposite.

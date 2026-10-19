@@ -1,4 +1,6 @@
 import java.util.*;
+// current solution is based on prev and next smaller
+// divide and concuer is also an interesting solution for this
 class Solution {
     public int largestRectangleArea(int[] heights) {
         int[] ps = calculatePreviousSmaller(heights);

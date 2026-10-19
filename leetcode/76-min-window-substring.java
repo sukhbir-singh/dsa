@@ -88,6 +88,7 @@ class Solution2 {
                 required.put(rightCharacter, required.get(rightCharacter) - 1);
             }
 
+            // notice that this is while loop. it will keep on contracting until invalid is found
             while (matched == t.length()) {
                 int windowLength = right - left + 1;
                 if (windowLength < minLength) {

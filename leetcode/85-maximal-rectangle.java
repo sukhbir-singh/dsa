@@ -1,10 +1,12 @@
 import java.util.*;
 // Important question
+// Learning: how to find prev and next smaller in one iteration
 class Solution {
     public int maximalRectangle(char[][] matrix) {
         // prefix matrix
         int[][] pm = new int[matrix.length][matrix[0].length];
 
+        // iterating in different order, column by col
         for (int i=0; i<matrix[0].length; i++) {
             int sum = 0;
             for (int j=0; j<matrix.length; j++) {
@@ -49,6 +51,7 @@ class Solution {
             st.push(i);
         }
 
+        // processing remaining elements of stack
         while (!st.isEmpty()) {
             int elementIndex = st.pop();
             int pse = st.isEmpty() ? -1 : st.peek();

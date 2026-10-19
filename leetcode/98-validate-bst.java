@@ -14,7 +14,7 @@
  * }
  */
 // This can be solved in both iterative way or recursive way
-// One innovative and interesting way to solve this question is using inorder traversal.
+// One innovative and interesting way to solve this question is using inorder traversal (both recursive or iterative).
 // left -> node -> right. Each value should be smaller than next one.
 class Solution {
     public boolean isValidBST(TreeNode root) {

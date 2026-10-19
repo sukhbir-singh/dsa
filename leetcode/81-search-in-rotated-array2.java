@@ -23,7 +23,8 @@ class Solution {
                 return true;
             }
 
-            if (nums[mid] >= nums[left]) {
+            // one way to remember is it, first select partition and then add condition for smaller definite part
+            if (nums[mid] >= nums[left]) { // first partition
                 if (nums[left] <= target && target <= nums[mid]) {
                     right = mid - 1;
                 } else {
