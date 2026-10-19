@@ -427,3 +427,19 @@ ListNode dummy = new ListNode(0, head);
 - DP thoughts: parameters, where to start - left top, right bottom (most of the time they are same), what dp array is storing, states
 
 - In noticed that for top down DP, i mostly start from last and move towards start. For bottom up, its opposite.
+
+>> Problem number sequence:
+25% — 53rd problem: 100
+50% — 106th problem: 234
+75% — 159th problem: 787
+
+- Peak valley is also a good approach, See leetcode 122 for reference. 
+Idea: we will find valley first and then next peak and then calculate the profit. This we will do for entire array.
+
+- Character.toLowerCase : useful method in java
+
+- In BFS, i feel easiest way for keeping level is along with the number as pair in queue.
+
+- In graph questions, if we have to find all the paths from node1 to nodex like shortests, then you have to use levelVisted list inside BFS. Example LC-126
+After each level, you have to remove all nodes visited in that level, not during the level, otherwise some paths will be skipped.
+

@@ -13,6 +13,7 @@
  *     }
  * }
  */
+// bad method naming
 class Solution {
     public boolean isBalanced(TreeNode root) {
         int h = height(root);

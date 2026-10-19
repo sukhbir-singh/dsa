@@ -61,6 +61,7 @@ class Solution1 {
 
 // Better Solution using Map
 class Solution2 {
+    // use record instead of custom class moving forward
     private class Pair{
         public TreeNode node;
         public int level;
@@ -75,7 +76,7 @@ class Solution2 {
             return new ArrayList<List<Integer>>();
         }
 
-        Map<Integer, List<Integer>> map = new HashMap<>();
+        Map<Integer, List<Integer>> map = new HashMap<>(); // level -> numbers
 
         Queue<Pair> queue = new LinkedList<>();
         queue.add(new Pair(root, 0));

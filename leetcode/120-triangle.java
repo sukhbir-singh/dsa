@@ -11,6 +11,7 @@ class Solution {
         Pair p = new Pair(r, c);
 
         // r cannot exceed the maximum value, c can exceed
+        // note - in current implementation, this will next gets executed, so can be removed
         if (c >= triangle.get(r).size()) {
             return Integer.MAX_VALUE;
         }

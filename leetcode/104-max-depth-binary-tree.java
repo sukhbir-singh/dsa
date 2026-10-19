@@ -13,6 +13,7 @@
  *     }
  * }
  */
+// This implementation is little confusing
 class Solution {
     public int maxDepth(TreeNode root) {
         return calc(root, 0);

@@ -1,5 +1,5 @@
 import java.util.*;
-// biggest mistake i keep on making in this query is to use DFS becaues of branches. This is completely wrong.
+// biggest mistake i keep on making in this query is to use DFS because of branches. This is completely wrong.
 // We have to find minimum distance. So please prefer using BFS.
 // Set here is working as visited set
 // Other solutions: Preprocessing can be done for optimization, Bidirectional BFS to reduce overall time

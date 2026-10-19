@@ -2,6 +2,7 @@ import java.util.*;
 // Tough qustion to think and implement
 // but teaches some good optimization lessons
 // Prefer mutation-based neighbor generation (like Solution1) instead of full distance scan.
+// current solution: Breadth-First Search (BFS) + Backtracking
 class Solution1 {
     private Map<String, List<String>> adj = new HashMap<>();
     private List<List<String>> ans = new ArrayList<>();
@@ -14,11 +15,11 @@ class Solution1 {
         }
         words.remove(beginWord);
 
-        // run BFS for creating adj list
+        // run BFS for creating adj list (it is reverse adj list so that we can iterate from endWord -> startWord)
         Queue<String> q = new LinkedList<>();
         q.add(beginWord);
 
-        Set<String> inQueue = new HashSet<>();
+        Set<String> inQueue = new HashSet<>(); // inQueue name is confusing, it should be visitedSet or tempVisited
         inQueue.add(beginWord); // kind of global visited array to use before putting in queue.
 
         // this is a smart way to visit nodes level by level
@@ -37,14 +38,15 @@ class Solution1 {
                     adj.put(nb, temp);
 
                     if (!inQueue.contains(nb)) {
-                        inQueue.add(nb);
-                        q.add(nb);
+                        inQueue.add(nb); // visit it
+                        q.add(nb); // add it to queue
                     }
                 }
             }
 
             // remove all nodes visited in this level from set
             // this needs to be done for avoiding visit to same word again in some other path later
+            // Example: if a node is visited in level 1, it does not makes sense to visit same node in level 2
             for (String v: levelVisited) {
                 words.remove(v);
             }
@@ -60,6 +62,7 @@ class Solution1 {
         return ans;
     }
 
+    // graph is DAG, so no visited is needed
     private void backtracking(String src, String des) {
         if (des.equals(src)) {
             List<String> newList = new ArrayList<>(cur);
