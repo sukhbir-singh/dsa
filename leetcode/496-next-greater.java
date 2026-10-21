@@ -14,6 +14,8 @@ class Solution {
         }
 
         st.push(new int[]{ nums2[0], 0 });
+        // i dont like approch is moving from left to right for finding next greater
+        // based on my understanding i feel, moving right to left is right approach for finding NGE
         for (int i = 1; i<nums2.length; i++) {
             int[] top = st.peek();
 
@@ -34,6 +36,39 @@ class Solution {
                 // add current num to stack
                 st.push(new int[]{ nums2[i], i });
             }
+        }
+
+        int res[] = new int[nums1.length];
+        for (int i = 0; i<nums1.length; i++) {
+            int index = mp.get(nums1[i]);
+            res[i] = grt[index];
+        }
+
+        return res;
+    }
+}
+
+// iterating in right direction for finding next greater
+// i feel this is much more intuitive and thus better
+class Solution2 {
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        Stack<Integer> st = new Stack<>(); // should store indices
+        Map<Integer, Integer> mp = new HashMap<>(); // keeping index positions
+        
+        int grt[] = new int[nums2.length];
+        for (int i = 0; i<nums2.length; i++) {
+            grt[i] = -1;
+            mp.put(nums2[i], i);
+        }
+
+        for (int i = nums2.length - 1; i >= 0; i--) {
+            while (!st.isEmpty() && nums2[st.peek()] <= nums2[i]) {
+                st.pop();
+            }
+            if (!st.isEmpty()) {
+                grt[i] = nums2[st.peek()];
+            }
+            st.push(i);
         }
 
         int res[] = new int[nums1.length];

@@ -1,5 +1,7 @@
 import java.util.*;
 
+// other solution: bucket sort
+// other solution: first sort by character, then sort by group length
 class Solution {
     private class Pair implements Comparable<Pair> {
         public char ch;

@@ -15,6 +15,8 @@
  */
 // In this solution, I am moving entire subtree to left or right side.
 // Other solution could be to replace deleted node with predessor or successor.
+// Must check the leetcode solution for other solution, very good explanation.
+// basically the deleted node needs be to replaced with either successor node or predecessor node and then again recursion will be called to delete that successor or predecessor.
 class Solution {
     public TreeNode deleteNode(TreeNode root, int key) {
         if (root == null) {
@@ -61,6 +63,7 @@ class Solution {
         return root.left;
     }
 
+    // important
     private TreeNode findLastRight(TreeNode node) {
         if (node == null) {
             return node;
@@ -69,3 +72,12 @@ class Solution {
         return node;
     }
 }
+
+/*
+Good example to visualise it:
+       5 (delete)        3
+      / \                 \
+     3   8       →         4
+      \                     \
+       4                     8
+*/

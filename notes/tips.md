@@ -462,3 +462,12 @@ After each level, you have to remove all nodes visited in that level, not during
 
 - Important: Remember - Difficult XOR questions are solved using Trie data structures.
 
+- This static util method gives only fixed length of binary format not 0 prefixes.
+
+jshell> Integer.toBinaryString(12)
+$5 ==> "1100"
+
+- Hint: When question asks for subtring like longest substring, then you should get hint that this might be related to slinding window. Becasuse we pick sliding window on a particular substring. 
+Note: subsequence cannot be solved using sliding window.
+
+- Note: For NGE, put indices in stack and not the actual element.

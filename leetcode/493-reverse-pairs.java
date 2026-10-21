@@ -1,5 +1,5 @@
-import java.util.*;
-
+// main logic: if we partition the array, and both sides are sorted, 
+// then we can easily find total reverse pairs
 class Solution {
     public int reversePairs(int[] nums) {
         int ans = mergeSort(nums, 0, nums.length-1);
@@ -25,6 +25,8 @@ class Solution {
         return cnt;
     }
 
+    // little difficult, need to do precisely
+    // for each left, check right in rightside array
     private int countReverses(int[] nums, int start, int mid, int end) {
         int cnt = 0;
         int left = start, right = mid + 1;
