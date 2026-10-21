@@ -1,4 +1,6 @@
 import java.util.*;
+// other way: QuickSelect algorithm, refere QuickSelect.java file
+// count sort can also be used
 class Solution {
     public int findKthLargest(int[] nums, int k) {
         Queue<Integer> heap = new PriorityQueue<>();

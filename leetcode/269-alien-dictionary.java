@@ -1,4 +1,7 @@
 import java.util.*;
+
+// Good application of graphs
+// Infer character-order constraints from adjacent words, then use topological sort to build the alphabet.
 class Solution {
     public String alienOrder(String[] words) {
         // there can be duplicate words in list
@@ -29,11 +32,8 @@ class Solution {
             }
         }
 
-
-        int n = words.length;
         Map<Character, Integer> deg = new HashMap<>();
         for (var entry : adj.entrySet()) {
-            char ch = entry.getKey();
             List<Character> list = entry.getValue();
             for (char c : list) {
                 deg.put(c, deg.getOrDefault(c, 0) + 1);
@@ -47,6 +47,7 @@ class Solution {
             }
         }
 
+        // topological sort
         List<Character> res = new ArrayList<>();
         while (!q.isEmpty()) {
             char ch = q.remove();
@@ -88,7 +89,6 @@ class Solution {
             if (w1.length() > w2.length() && w2.equals(w1.substring(0,len))) {
                 return new HashMap<>();
             }
-
             
             for (int j=0; j<len; j++) {
                 char ch1 = w1.charAt(j);
@@ -115,5 +115,63 @@ class Solution {
         }
         
         return mp;
+    }
+}
+
+// this is better implementation
+// improvements in this solution: instead of reverse use straight adjList and reverse the character sequence in the end, and try to pass parameters to dfs instead of taking global parameters.
+class Solution2 {
+
+    private Map<Character, List<Character>> reverseAdjList = new HashMap<>();
+    private Map<Character, Boolean> seen = new HashMap<>();
+    private StringBuilder output = new StringBuilder();
+
+    public String alienOrder(String[] words) {
+        // Step 0: Put all unique letters into reverseAdjList as keys.
+        for (String word : words) {
+            for (char c : word.toCharArray()) {
+                reverseAdjList.putIfAbsent(c, new ArrayList<>());
+            }
+        }
+
+        // Step 1: Find all edges and add reverse edges to reverseAdjList.
+        for (int i = 0; i < words.length - 1; i++) {
+            String word1 = words[i];
+            String word2 = words[i + 1];
+            // Check that word2 is not a prefix of word1.
+            if (word1.length() > word2.length() && word1.startsWith(word2)) {
+                return "";
+            }
+            // Find the first non match and insert the corresponding relation.
+            for (int j = 0; j < Math.min(word1.length(), word2.length()); j++) {
+                if (word1.charAt(j) != word2.charAt(j)) {
+                    reverseAdjList.get(word2.charAt(j)).add(word1.charAt(j));
+                    break;
+                }
+            }
+        }
+
+        // Step 2: DFS to build up the output list.
+        for (Character c : reverseAdjList.keySet()) {
+            boolean result = dfs(c);
+            if (!result) return "";
+        }
+
+        return output.toString();
+    }
+
+    // Return true iff no cycles detected.
+    private boolean dfs(Character c) {
+        if (seen.containsKey(c)) {
+            return seen.get(c); // If this node was grey (false), a cycle was detected.
+        }
+        seen.put(c, false);
+        for (Character next : reverseAdjList.get(c)) {
+            boolean result = dfs(next);
+            if (!result) return false;
+        }
+        seen.put(c, true);
+        output.append(c);
+        return true;
     }
 }

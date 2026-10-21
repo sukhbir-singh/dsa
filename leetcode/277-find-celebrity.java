@@ -1,6 +1,7 @@
 /* The knows API is defined in the parent class Relation.
       boolean knows(int a, int b); */
-
+// Observation: On the graph representation, a celebrity is a person who has exactly n - 1 directed edges 
+// going in (everybody knows them) and 0 edges going out (they know nobody).
 public class Solution extends Relation {
     public int findCelebrity(int n) {
         int candidate = 0;

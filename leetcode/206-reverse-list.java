@@ -8,30 +8,8 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
-    public ListNode reverseList(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-
-        ListNode p = null, c = head, n = head.next;
-        while (c != null) {
-            c.next = p;
-
-            p = c;
-            c = n;
-            if (n != null) {
-                n = n.next;
-            }
-        }
-
-        return p;
-    }
-}
-
-
 // Better Solution Using 2 pointer
-class SolutionUsing2Pointer {
+class Solution {
     public ListNode reverseList(ListNode head) {
         ListNode p = null;
         ListNode c = head;
@@ -42,6 +20,19 @@ class SolutionUsing2Pointer {
             p = c;
             c = nextTemp;
         }
+        return p;
+    }
+}
+
+// recursive
+class Solution2 {
+    public ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode p = reverseList(head.next);
+        head.next.next = head; // important
+        head.next = null;
         return p;
     }
 }

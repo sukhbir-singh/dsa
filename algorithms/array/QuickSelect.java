@@ -1,5 +1,4 @@
 package algorithms.array;
-
 import java.util.Arrays;
 
 public class QuickSelect {

@@ -6,7 +6,7 @@ class Solution {
 
         // left to right iteration
         for (int i=1; i<ratings.length; i++) {
-            if (ratings[i] > ratings[i-1]) {
+            if (ratings[i] > ratings[i-1]) { // checking with previous element
                 candies[i] = candies[i-1] + 1;
             }
         }
@@ -19,7 +19,7 @@ class Solution {
         // right to left iteration
         int cur = 0, right = candies[ratings.length-1];
         for (int i=ratings.length-2; i>=0; i--) {
-            if (ratings[i] > ratings[i+1]) {
+            if (ratings[i] > ratings[i+1]) { // checking with next element
                 cur = right + 1;
             } else {
                 cur = 1;

@@ -9,7 +9,7 @@ class Solution {
 
         while (left <= right) {
             int mid = (left + right)/2;
-            if (mid > 0 && nums[mid] < nums[mid - 1]) {
+            if (nums[mid] < nums[mid - 1]) { // only one number will satisfy this
                 return nums[mid];
             }
 

@@ -8,6 +8,7 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+//  Merge Sort is one of the efficient sorting algorithms that is popularly used for sorting the linked list.
 class Solution {
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null) {

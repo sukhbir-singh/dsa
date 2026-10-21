@@ -1,6 +1,8 @@
 // learnt two very important optimizations in this solution
 // while making a cut, if left side of cut is palindrome then only make a cut.
 // this will save recursion call on left side of string. saving lots of computations
+// we can also maintain cache for palindrom recomputations
+// another optimization: In current solution since, right is always fixed. can i just take 1d DP array and store dp[left] = ans.
 class Solution {
     public int minCut(String s) {
         int n = s.length();

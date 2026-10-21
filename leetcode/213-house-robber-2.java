@@ -26,10 +26,10 @@ class Solution {
             return dp.get(p);
         }
 
-        boolean UpdatedlastPicked = n == nums.length-1 ? true : lastPicked;
+        boolean updatedlastPicked = n == nums.length-1 ? true : lastPicked;
 
         // if current is picked, next we can pick is n-2 (non-adjacent)
-        int pick = nums[n] + recursion(nums, n-2, dp, UpdatedlastPicked);
+        int pick = nums[n] + recursion(nums, n-2, dp, updatedlastPicked);
         // if current is not picked, next we can pick is n-1
         int notPick = recursion(nums, n-1, dp, lastPicked);
 

@@ -15,6 +15,9 @@ class Node {
 */
 
 // easier algo would be to use Map (OriginalNode -> ClonedNode)
+// should have used dummy node, whenever you have to create new list always use dummy node.
+// current solution uses O(n) extra space. 
+// For avoiding it, you can insert new node between each node and then update random and next pointers
 class Solution {
     public Node copyRandomList(Node head) {
         if (head == null) return head;

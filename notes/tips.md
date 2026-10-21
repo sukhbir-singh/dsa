@@ -443,3 +443,16 @@ Idea: we will find valley first and then next peak and then calculate the profit
 - In graph questions, if we have to find all the paths from node1 to nodex like shortests, then you have to use levelVisted list inside BFS. Example LC-126
 After each level, you have to remove all nodes visited in that level, not during the level, otherwise some paths will be skipped.
 
+- DP is mostly try all possibility with caching. So recursion to all cases. reducing redundant calculations.
+
+- In DSU, better to name top element of a group as "root" instead of "parent".
+
+- Trie is also known as prefix tree.
+- Implementing Trie using map: char -> node, is easier. so prefer it.
+
+- In linkedlist, one useful way for printing node in reverse is using recursion. Print after recursion call ends.
+
+- If you are running out of time, and you have to take lots of parameters for DFS, you can quickly do this using globally defined variables.
+
+- Rememeber: Kahn's algorithm is the standard BFS-based (Breadth-First Search) approach for finding a topological sort of a Directed Acyclic Graph (DAG).
+

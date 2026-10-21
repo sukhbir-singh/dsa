@@ -8,7 +8,7 @@
  * }
  */
 // Recursive solution is good
-// Iterative solution: create map of parent -> child relations, until you find both p an q
+// Iterative solution: create map of child -> parent relations, until you find both p an q
 // and then create set of all ancestors of p, and then go up from q until you find any existing common ancestor between p and q.
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {

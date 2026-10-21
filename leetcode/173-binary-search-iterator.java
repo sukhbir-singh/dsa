@@ -14,7 +14,10 @@ import java.util.*;
  *     }
  * }
  */
-// If you know how to visit tree iteratively then you can easily solve this problem
+// current implementation is also good enough to be accepted.
+// other solution is by flattening the tree to array.
+// If you know how to visit tree iteratively then you can easily solve this problem - Morris traversal
+// Tradeoff is that Morris traversal temporarily changes tree links to create threads.
 class BSTIterator {
     private Stack<TreeNode> st;
     private TreeNode cur;

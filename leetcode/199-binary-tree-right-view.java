@@ -36,6 +36,7 @@ class Solution {
     }
 }
 
+// normal level wise traversal and lots of updates using map. key is level no. and value is node.
 class Solution2 {
     private class Pair {
         private TreeNode node;
@@ -63,7 +64,7 @@ class Solution2 {
             Pair p = queue.remove();
             TreeNode node = p.node;
             
-            map.put(p.level, node.val);
+            map.put(p.level, node.val); // idea: right most will be updated last for each row
             maxlevel = Math.max(maxlevel, p.level);
                 
             if (node.left != null) {

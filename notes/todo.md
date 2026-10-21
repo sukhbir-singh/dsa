@@ -12,5 +12,7 @@
 - Learn about segment trees
 
 - Learn about Line Sweep Algorithm
+https://leetcode.com/discuss/post/2166045/line-sweep-algorithms-by-c0d3m-8ebq/
 
+- Some probability solutions tricks, formulas used in ds algo questions
 

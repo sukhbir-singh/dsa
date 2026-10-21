@@ -348,3 +348,7 @@ the index of the search key, if it is contained in the list; otherwise,  (-(inse
 if (idx < 0) {
     idx = -(idx + 1);
 }
+
+- startsWith is useful in many string operations.
+word1.startsWith(word2)
+

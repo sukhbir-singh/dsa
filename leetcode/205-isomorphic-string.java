@@ -1,7 +1,9 @@
 import java.util.*;
 
 // good question - it is not as straight forward as it looks
-// remember that it should be both way mapping. one way mapping is wrong solution.
+// remember that it should be both way mapping. one way mapping is wrong solution. Ex: s = "ab", t= "cc"
+// other solution could be to transform both strings to some common and compare. 
+// like replacing each character with first occurence index number
 class Solution {
     public boolean isIsomorphic(String s, String t) {
         if (s.length() != t.length()) {
