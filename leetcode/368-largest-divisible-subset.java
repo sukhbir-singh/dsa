@@ -21,7 +21,7 @@ class Solution {
 
         int mx = 1, mxIndex = 0;
         for (int i=0; i<n; i++) {
-            for (int j=0; j<i; j++) {
+            for (int j=0; j<i; j++) { // note: j is from 0 to i
 
                 // Intuition: For any value that can be divided by the largest element in the divisible subset, 
                 // by adding the new value into the subset, one can form another divisible subset, 

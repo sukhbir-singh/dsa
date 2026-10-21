@@ -1,6 +1,9 @@
 import java.util.*;
 
 // better to use array instead of list in this question
+// Below Memoized interval DP is O(n^3): O(n^2) intervals, each trying O(n) choices for the last balloon.
+// Subset-mask DP has O(2^n) states (typically O(n * 2^n) time); this recursion without memoization is O(3^n).
+// Each of the n balloons is either burst or not burst, giving 2 × 2 × … × 2 = 2^n possible subsets
 class Solution {
     public int maxCoins(int[] nums) {
         int m = nums.length;

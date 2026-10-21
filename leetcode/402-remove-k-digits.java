@@ -1,4 +1,9 @@
 import java.util.*;
+
+// Use a monotonic increasing stack to remove larger digits first, then strip leading zeros.
+// visualisation: think about putting all digits in a stack and then deduce logic. here logic is that
+// we have to remove larger digits if smaller digit is behind it. It means that if we can replace 
+// larger digit with next smaller digit then we will get the smallest number.
 class Solution {
     public String removeKdigits(String num, int k) {
         Stack<Character> st = new Stack<>();

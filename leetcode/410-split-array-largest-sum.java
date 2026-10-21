@@ -1,4 +1,5 @@
 import java.util.*;
+// other solution would be trying all possibility using DP
 class Solution {
     public int splitArray(int[] nums, int k) {
         // remember: this is maximum because each number will be allocated to an subarray. so that minimum allocated will be the maximum of this array elements.

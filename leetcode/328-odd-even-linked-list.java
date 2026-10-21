@@ -23,6 +23,13 @@ class Solution {
 
             even.next = odd.next;
             even = even.next;
+
+            // 2nd way
+            // odd.next = odd.next.next;
+            // even.next = even.next.next;
+
+            // odd = odd.next;
+            // even = even.next;
         }
 
         odd.next = evenStart;

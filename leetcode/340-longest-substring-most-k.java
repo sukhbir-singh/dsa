@@ -1,7 +1,8 @@
 import java.util.*;
 
-// set is not useful in this problem, because while moving left if we remove element from set - we might be wrong because of element frequency
+// set is not useful in this problem, because while moving left if we remove element from set - we might be wrong answer because of not considering element's frequency
 // Later realization: count variable was not needed. actually the total number of keys present in map is equal to total unique keys present.
+// Instead of count use mp.size() because it is exactly the number of distinct characters in the window
 
 // More optimized algorithm: we dont even need inner while loop, because no need to trim window till it is valid. keep the window size and move 
 // forward both left and right so see if any valid windows comes. otherwise existing found window is maximum answer.

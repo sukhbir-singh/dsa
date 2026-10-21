@@ -456,3 +456,9 @@ After each level, you have to remove all nodes visited in that level, not during
 
 - Rememeber: Kahn's algorithm is the standard BFS-based (Breadth-First Search) approach for finding a topological sort of a Directed Acyclic Graph (DAG).
 
+- Calculating time complexity for DP solution: each state will be calculated once. so time spent in one state calculate * total states will be the time complexity.
+
+- Dont get confused with term "subset" in array, it is same as subsequence in array.
+
+- Important: Remember - Difficult XOR questions are solved using Trie data structures.
+
