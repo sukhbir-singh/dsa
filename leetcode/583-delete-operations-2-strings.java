@@ -1,4 +1,6 @@
 import java.util.*;
+
+// Note: here lcs is longest common subsequence
 class Solution {
     public int minDistance(String word1, String word2) {
         int n1 = word1.length(), n2 = word2.length();

@@ -1,7 +1,8 @@
 import java.util.*;
-// Learning: there is not need to store indexes of elements. Stack<Integer> should be sufficient.
+// Learning: there is no need to store indexes of elements. Stack<Integer> should be sufficient.
 // Instead of this - just store the indices of the elements in the stack and that will represent both index as well as element.
 // Travering from right to left is better in this question.
+// other way could be to start from highest number and iterate till you reach that index again after iterating n numbers.
 class Solution {
     public int[] nextGreaterElements(int[] nums) {
         int[] gre = new int[nums.length];

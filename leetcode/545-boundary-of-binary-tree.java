@@ -14,6 +14,7 @@ import java.util.*;
  *     }
  * }
  */
+// other little more complex solution is to use preorder traversal using flags (ints)
 class Solution {
     public List<Integer> boundaryOfBinaryTree(TreeNode root) {
         List<Integer> res = new ArrayList<>();

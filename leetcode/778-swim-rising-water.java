@@ -1,3 +1,9 @@
+/*
+ * For an n x m grid, V = n*m cells and E = O(n*m) neighbor connections.
+ * Priority-queue Dijkstra: O((V + E) * log V) = O(n*m * log(n*m)) time.
+ * Space: O(n*m) for the time matrix and priority queue.
+ * For an n x n grid: O(n^2 * log n) time and O(n^2) space.
+ */
 import java.util.*;
 
 class Solution {

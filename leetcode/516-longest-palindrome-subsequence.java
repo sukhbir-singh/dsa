@@ -41,6 +41,7 @@ class Solution {
         return ans;
     }
 
+    // this is done for printing the sequence. dont get confused, this is not bottom up dp.
     private String findSubsequence(String s, String t, int[][] dp) {
         int r = dp.length-1, c = dp[0].length-1;
         StringBuilder sb = new StringBuilder();

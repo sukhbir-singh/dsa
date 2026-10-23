@@ -352,3 +352,6 @@ if (idx < 0) {
 - startsWith is useful in many string operations.
 word1.startsWith(word2)
 
+// How to create clone of array, here n = size of array
+int[] temp = Arrays.copyOf(dist, n);
+

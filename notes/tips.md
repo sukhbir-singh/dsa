@@ -471,3 +471,15 @@ $5 ==> "1100"
 Note: subsequence cannot be solved using sliding window.
 
 - Note: For NGE, put indices in stack and not the actual element.
+
+- In string questions, always think about longest common substring and longest common subsequence. In advanced questions, these are getting used internally. In DP questions.
+
+- Remember the logic for finding longest increasing subsequence in array: keep a length array of size n (initalize with 1). 
+Now, use nested loop to check all i which is less then j. if num[i] < num[j], then count[j] = Max(count[i] + 1, count[j])
+
+- TreeSet is a special set which handles both de-duplication and sorting by default.
+
+- When you have to find maximum of minimum, it should give hint that this might be binary search question where you have to apply binary search on search space.
+
+- Remember: In Dijkstra's implementation, you will add to the priority queue again only when new distance is smaller than existing distance to that node.
+

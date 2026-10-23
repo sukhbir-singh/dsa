@@ -2,6 +2,7 @@ import java.util.*;
 
 // learning - dont assume 0 is always src
 // since direct edges list is given bellman ford is more simpler in this case. you dont need to create graph.
+// Note order by cost in priority queue can result in wrong answer.
 class Solution {
     private record Edge(int node, int dist){}; // for graph
     private record EdgeWithStop(int stops, int dist, int node){}; // for priority queue
@@ -48,3 +49,29 @@ class Solution {
         return dist[dst] == Integer.MAX_VALUE ? -1 : dist[dst];
     }
 }
+
+// using bellman ford
+// Important Note - standard Bellman–Ford → no copy needed. This flight-limited variant → use the copy to enforce the edge limit.
+class Solution2 {
+    public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
+        // Distance from source to all other nodes.
+        int[] dist = new int[n];
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        dist[src] = 0;
+
+        // Run only K+1 times since we want shortest distance in K hops
+        // applying all edges relaxation by number of stop like first with 0 stops will be updated, then 1 stops edges will be updated and so on.
+        for (int i = 0; i <= k; i++) {
+            // Create a copy of dist vector.
+            int[] temp = Arrays.copyOf(dist, n);
+            for (int[] flight : flights) {
+                if (dist[flight[0]] != Integer.MAX_VALUE) {
+                    temp[flight[1]] = Math.min(temp[flight[1]], dist[flight[0]] + flight[2]);
+                }
+            }
+            // Copy the temp vector into dist.
+            dist = temp;
+        }
+        return dist[dst] == Integer.MAX_VALUE ? -1 : dist[dst];
+    }
+};

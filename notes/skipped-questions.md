@@ -63,3 +63,5 @@ https://leetcode.com/problems/closest-subsequence-sum/description/
 
 https://leetcode.com/problems/web-crawler/description/?envType=weekly-question&envId=2026-09-27
 
+
+https://leetcode.com/problems/minimum-cost-to-reach-city-with-discounts/description/

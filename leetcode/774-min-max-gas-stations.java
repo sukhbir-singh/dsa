@@ -1,3 +1,16 @@
+/*
+ * n = stations.length, D = maximum gap between consecutive stations.
+ * epsilon = 1e-6, the binary-search stopping precision (not the 1e-9 remainder tolerance).
+ *
+ * findMaxDist: O(n).
+ * Each checkDist call: O(n), including O(1) work per gap.
+ * After t binary-search iterations, the interval width is D / 2^t.
+ * D / 2^t <= epsilon => t >= log2(D / epsilon).
+ * Thus, for D > epsilon, there are ceil(log2(D / epsilon)) iterations.
+ * Total time: O(n + n * log2(D / epsilon)) = O(n * (1 + log2(D / epsilon))).
+ * If D <= epsilon, binary search is skipped and total time is O(n).
+ * Auxiliary space: O(1).
+ */
 class Solution {
     public double minmaxGasDist(int[] stations, int k) {
         double left = 0.0, right = findMaxDist(stations)*1.0;

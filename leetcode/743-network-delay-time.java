@@ -3,6 +3,7 @@ import java.util.*;
 // since edge list is given lets try bellman ford algorithm
 // important learning: if edge list is given and you have to find shortest distance from src to all nodes, 
 // then prefer bellman ford. it is much simpler to implement and understand.
+// simple BFS, DFS can also be used
 class Solution {
     public int networkDelayTime(int[][] times, int n, int k) {
         int[] dist = new int[n];
